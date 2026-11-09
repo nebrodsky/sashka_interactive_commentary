@@ -68,6 +68,24 @@
       border: 1px solid var(--accent);
       color: #fff;
     }
+
+    /* Выделение разночтений и вариантов текста (пунктир без привязки к 18+) */
+.text-variant {
+  color: inherit;
+  border-bottom: 1px dashed var(--accent);
+  cursor: pointer;
+  font-style: normal;
+  transition: opacity 0.15s ease, background-color 0.15s ease;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+/* Эффект при наведении и при активном комментарии */
+.text-variant:hover,
+.text-variant.active {
+  background-color: var(--accent-light);
+  border-bottom-style: solid;
+}
   </style>
 </head>
 <body class="mode-teen">
@@ -108,17 +126,18 @@
 Хочет принимать,
 Кто разносит
 И доносит —
-<span class="teen-val teen-censored" onclick="loadComm('comm_read_cens')">Тот ..... </span><span class="adult-val">Тот и блядь.</span>
+Тот <span class="teen-val">.....</span><span class="adult-val">и блядь.</span>
       </div>
 
       <h2 class="canto-title">Глава первая</h2>
 
+      <!-- Строфа 1 -->
       <div class="stanza">
 <strong>1</strong>
-<span class="term" onclick="loadComm('onegin_uncle')">«Мой дядя — человек сердитый,</span>
+<span class="term" onclick="loadComm('parody_onegin_intro')">«Мой дядя — человек сердитый</span>,
 И тьму я браней претерплю,
 Но если говорить открыто,
-<span class="term" onclick="loadComm('struysky_uncle')">Его немножко я люблю!</span>
+<span class="term" onclick="loadComm('bio_struysky_uncle')">Его немножко я люблю!</span>
 Он — черт, когда разгорячится,
 Дрожит, как пустится кричать,
 Но жар в минуту охладится —
@@ -126,73 +145,78 @@
 Зато какая же мне скука
 Весь день при нем в гостиной быть,
 Какая тягостная мука
-<span class="term" onclick="loadComm('struysky_campaigns')">Лишь о походах говорить,</span>
+<span class="term" onclick="loadComm('history_struysky_campaigns')">Лишь о походах говорить</span>,
       </div>
 
+      <!-- Строфа 2 -->
       <div class="stanza">
 <strong>2</strong>
-<span class="term" onclick="loadComm('struyskaya_wife')">Супруге строить комплименты,</span>
+<span class="term" onclick="loadComm('bio_struyskaya_wife')">Супруге</span> строить комплименты,
 Платочки с полу подымать,
 Хвалить ей шляпки ее, ленты,
 Детей в колясочке катать,
-<span class="term" onclick="loadComm('phrase_lyasy')">Точить им сказочки да лясы,</span>
+<span class="term" onclick="loadComm('phrase_lyasy')">Точить им сказочки да лясы</span>,
 Водить в саду в день раза три
-И строить разные гримасы,
-<span class="term" onclick="loadComm('onegin_chort')">Бормоча: „Черт вас побери!“»</span>
+И <span class="term" onclick="loadComm('vocab_grimaces')">строить разные гримасы</span>,
+<span class="term" onclick="loadComm('parody_onegin_chort')">Бормоча: „Черт вас побери!“</span>»
 Так, растянувшись на телеге,
 Студент московский помышлял,
 Когда в ночном на ней побеге
-<span class="term" onclick="loadComm('geo_escape_piter')">Он к дяде в Питер поскакал.</span>
+Он к дяде в <span class="term" onclick="loadComm('geo_piter_escape')">Питер</span> поскакал.
       </div>
 
+      <!-- Строфа 3 -->
       <div class="stanza">
 <strong>3</strong>
 Студенты всех земель и краев!
-<span class="term" onclick="loadComm('author_friend_model')">Он ваш товарищ и мой друг;</span>
-<span class="term" onclick="loadComm('bio_polezhaev_name')">Его фамилья Полежаев,</span>
+<span class="term" onclick="loadComm('parody_author_friend')">Он ваш товарищ и мой друг</span>;
+Его фамилья Полежаев,
 А дальше... эх, друзья, не вдруг!
 Я парень и без вас болтливый,
 И только б вас не усыпить,
 А то внимайте терпеливо:
 Я рад весь век мой говорить!
 Быть может, в Пензе городишка
-Несноснее Саранска нет, —
-<span class="term" onclick="loadComm('geo_pokryshkino')">Под ним есть малое селишко,</span>
+Несноснее Саранска нет,—
+<span class="term" onclick="loadComm('geo_pokryshkino_birth')">Под ним есть малое селишко</span>,
 И там мой друг увидел свет...
       </div>
 
+      <!-- Строфа 4 -->
       <div class="stanza">
 <strong>4</strong>
 Нельзя сказать, чтобы богато
 Иль бедно жил его отец,
-<span class="term" onclick="loadComm('vocab_torovaty')">Но всё довольно торовато,</span>
-<span class="term" onclick="loadComm('onegin_father_debt')">Чтоб промотаться наконец.</span>
+Но всё довольно <span class="term" onclick="loadComm('vocab_torovato')">торовато</span>,
+<span class="term" onclick="loadComm('parody_onegin_promotatsya')">Чтоб промотаться наконец</span>.
 Но это прочь!.. Отцу быть можно
-Таким, сяким и растаким, —
+Таким, сяким и растаким,—
 Нам говорить о сыне должно:
 Посмотрим, вышел он каким.
-<span class="term" onclick="loadComm('derzhavin_izmail')">Как быстро с гор весенни воды
-В долины злачные текут,</span>
+<span class="term" onclick="loadComm('parody_derzhavin_izmail')">Как быстро с гор весенни воды
+В долины злачные текут</span>,
 Так пусть в рассказе нашем годы
 Его младенчества пройдут.
       </div>
 
+      <!-- Строфа 5 -->
       <div class="stanza">
 <strong>5</strong>
 Пропустим также, что родитель
 Его до крайности любил,
 И первый Сашеньки учитель
-<span class="term" onclick="loadComm('onegin_tutor_lackey')">Лакей из дворни его был.</span>
-Пропустим, что <span class="term" onclick="loadComm('myth_mentor')">сей ментор славный</span>
-<span class="term" onclick="loadComm('myth_solomon')">Был и в французском Соломон</span>
+<span class="term" onclick="loadComm('mores_lackey_tutor')">Лакей из дворни его был</span>.
+Пропустим, что сей <span class="term" onclick="loadComm('myth_mentor')">ментор</span> славный
+Был и в французском <span class="term" onclick="loadComm('myth_solomon')">Соломон</span>
 И что дитя болтал исправно:
-<span class="term" onclick="loadComm('french_curses')"><span class="teen-val">«Jean-foutre, un vil, un c...»</span><span class="adult-val">«Jean-foutre, un vil, un con»</span></span>
+<span class="term" onclick="loadComm('vocab_french_curses')">«Jean-foutre, un vil, un con»</span>.
 Пропустим, что на балалайке
-В шесть лет <span class="term" onclick="loadComm('song_barynya')">он «барыню» играл</span>
-И что <span class="term" onclick="loadComm('vocab_pokhabstva')">в похабствах</span>, <span class="term" onclick="loadComm('game_babki')">бабках</span>, <span class="term" onclick="loadComm('game_svayka')">свайке</span>
+В шесть лет он <span class="term" onclick="loadComm('folklore_barynya')">«барыню»</span> играл
+И что в <span class="term" onclick="loadComm('vocab_pokhabstva')">похабствах</span>, <span class="term" onclick="loadComm('games_babki')">бабках</span>, <span class="term" onclick="loadComm('games_svayka')">свайке</span>
 Он кучерам не уступал.
       </div>
 
+      <!-- Строфа 6 -->
       <div class="stanza">
 <strong>6</strong>
 Вот Саше десять лет пробило,
@@ -204,27 +228,29 @@
 И у француза в пансионе
 Шалун за книгою сидит.
 Я думаю, что всем известно,
-<span class="term" onclick="loadComm('pension_vizard')">Что значит модный пансион.</span>
+<span class="term" onclick="loadComm('pension_vizard_boarding')">Что значит модный пансион</span>.
 Итак, не многим будет лестно
 Узнать, чему учился он.
       </div>
 
+      <!-- Строфа 7 -->
       <div class="stanza">
 <strong>7</strong>
 Должно быть, кой-чему учился
-Иль выучил <span class="term" onclick="loadComm('coin_altyn')">хоть на алтын</span>,
+Иль выучил <span class="term" onclick="loadComm('coins_altyn')">хоть на алтын</span>,
 Когда достойным учинился
 Носить студента знатный чин!
 О родины прямых студентов —
-<span class="term" onclick="loadComm('euro_universities')">Гёттинген, Вильна и Оксфорд!</span>
-<span class="term" onclick="loadComm('patents_privilege')">У вас не может брать патентов
-Дурак, алтынник или скот;</span>
-<span class="term" onclick="loadComm('estate_zvonar')">Звонарь не может колокольный</span>
+<span class="term" onclick="loadComm('edu_european_universities')">Гёттинген, Вильна и Оксфорд</span>!
+У вас не может <span class="term" onclick="loadComm('estate_brat_patenty')">брать патентов</span>
+<span class="term" onclick="loadComm('vocab_durak_altynnik_skot')">Дурак, алтынник или скот</span>;
+<span class="term" onclick="loadComm('estate_zvonar_kolokolny')">Звонарь не может колокольный</span>
 У вас на лекции сидеть,
-<span class="term" onclick="loadComm('costume_shpora_shlyapa')">Вертеться в шляпе треугольной
-И шпагу при бедре иметь.</span>
+<span class="term" onclick="loadComm('costume_treugolnaya_shlyapa')">Вертеться в шляпе треугольной
+И шпагу при бедре иметь</span>.
       </div>
 
+      <!-- Строфа 8 -->
       <div class="stanza">
 <strong>8</strong>
 У вас не вздумает мальчишка
@@ -236,43 +262,46 @@
 Не полузнайка просвещенный
 И не с червонцами дурак!
 У вас таланты в уваженье,
-А не <span class="term" onclick="loadComm('phrase_three_versts')">поклоны в трех верстах;</span>
+А не <span class="term" onclick="loadComm('phrase_poklony_tri_versty')">поклоны в трех верстах</span>;
 У вас заслугам награжденье,
-А не приветствиям в сенях!
+А не <span class="term" onclick="loadComm('mores_privetstviya_v_senyakh')">приветствиям в сенях</span>!
       </div>
 
+      <!-- Строфа 9 -->
       <div class="stanza">
 <strong>9</strong>
 Не ректор духом вашим правит —
 Природный ум вам кажет путь,
 И он вам чин и честь доставит,
-А не «нельзя ли как-нибудь!».
-А ты, козлиными брадами
+А не <span class="term" onclick="loadComm('mores_nelzya_li_kak_nibud')">«нельзя ли как-нибудь!»</span>.
+А ты, <span class="term" onclick="loadComm('satire_kozlinye_brady')">козлиными брадами</span>
 Лишь пресловутая земля,
 Умы гнетущая цепями,
 Отчизна глупая моя!
-Когда тебе настанет время
+Когда тебе настанет время.
 Очнуться в дикости своей?
 Когда ты свергнешь с себя бремя
 Своих презренных палачей?
       </div>
 
+      <!-- Строфа 10 -->
       <div class="stanza">
 <strong>10</strong>
 Но что я?.. Где я?.. Куда скрылся
 Вниманья нашего предмет?..
 Ах, господа, как я забылся:
 Я сам и русский и студент...
-Но это прочь... Вот в вицмундире,
+Но это прочь... Вот <span class="term" onclick="loadComm('costume_vitsmundir')">в вицмундире</span>,
 Держа в руках большой стакан,
-Сидит с красотками в трактире
-Какой-то черненький буян.
+Сидит с красотками <span class="term" onclick="loadComm('parody_heroicomic_traktir')">в трактире</span>
+<strong>Какой-то черненький буян.</strong>
 Веселье наглое играет
 В его закатистых глазах,
 И сквернословие летает
 На пылких юноши устах...
       </div>
 
+      <!-- Строфа 11 -->
       <div class="stanza">
 <strong>11</strong>
 Кричит... Пунш плещет, брызжет пиво;
@@ -281,20 +310,21 @@
 Рои трактирщиков стоят...
 Махнул — и бубны зазвучали,
 Как гром по тучам прокатил,
-И крик <span class="term" onclick="loadComm('romance_black_shawl')">цыганской «Черной шали»</span>
+И крик <span class="term" onclick="loadComm('romance_chernaya_shal')">цыганской «Черной шали»</span>
 Трактира своды огласил;
 И дикий вопль и восклицанья
 Согласны с пылкою душой,
 И пал студент в очарованье
-На перси девы молодой.
+На <span class="term" onclick="loadComm('vocab_persi')">перси</span> девы молодой.
       </div>
 
+      <!-- Строфа 12 -->
       <div class="stanza">
 <strong>12</strong>
 Кто ж сей во славе буйной зримый
-<span class="term" onclick="loadComm('myth_epicur')">Младой роскошный эпикур,</span>
-<span class="term" onclick="loadComm('myth_paphos_queen')">Царицей Пафоса любимый,</span>
-<span class="term" onclick="loadComm('myth_amur')">Средь нимф увенчанный Амур?</span>
+Младой роскошный <span class="term" onclick="loadComm('myth_epicur')">эпикур</span>,
+<span class="term" onclick="loadComm('myth_tsaritsa_paphosa')">Царицей Пафоса</span> любимый,
+Средь нимф увенчанный <span class="term" onclick="loadComm('myth_amur')">Амур</span>?
 Друзья, никак не может статься,
 Чтоб всякий вдруг не отгадал,
 И мне пришлось бы извиняться,
@@ -302,43 +332,49 @@
 Ах, миг счастливый, быстротечный
 Волшебных юношества лет!
 Блажен, кто в радости сердечной
-Тебя сорвал, как вешний цвет!
+Тебя сорвал, как <span class="term" onclick="loadComm('vocab_veshniy_tsvet')">вешний</span> цвет!
       </div>
 
+      <!-- Строфа 13 -->
       <div class="stanza">
 <strong>13</strong>
 Блажен, кто слез ручей горючий
-Рукой <span class="term" onclick="loadComm('name_anyuta')">Анюты</span> утирал;
-Блажен, кто жизни путь колючий
-Вином отрадным поливал.
-Пусть смотрит <span class="term" onclick="loadComm('philosophy_heraclit')">Гераклит плаксивый</span>
+Рукой Анюты утирал;
+<span class="term" onclick="loadComm('parody_psalom_blazhen')">Блажен, кто жизни путь колючий
+Вином отрадным поливал</span>.
+Пусть смотрит <span class="term" onclick="loadComm('philosophy_geraklit_plaksivy')">Гераклит плаксивый</span>
 С улыбкой жалкой на тебя,
 Но ты блажен, о друг мой милый,
 Забыв в веселье сам себя.
-Отринем, свергнем с себя бремя
+<span class="term" onclick="loadComm('poetics_anacreontic_motifs')">Отринем, свергнем с себя бремя
 Старинных умственных цепей,
 Что ныне гибельное время
-Еще щадит до наших дней.
+Еще щадит до наших дней</span>.
       </div>
 
+      <!-- Строфа 14 -->
       <div class="stanza">
 <strong>14</strong>
-Хорош философ был Сенека,
-Еще умней — Платон-мудрец,
+Хорош философ был <span class="term" onclick="loadComm('philosophy_seneka')">Сенека</span>,
+Еще умней — <span class="term" onclick="loadComm('philosophy_platon_mudrets')">Платон-мудрец</span>,
 Но через два или три века
 Они, ей-ей, не образец.
 И в тех и в новых шарлатанах
 Лишь скарб нелепостей одних;
 Но и весь свет наш на обманах
 Или духовных, иль мирских.
-И полно, я заговорился,
-А как мой Сашка пировать
-<span class="teen-val">С ....... в трактире научился,</span><span class="adult-val">С блядьми в трактире научился,</span>
-Я и забыл вам рассказать.
+. . . . . . . . . .
+. . . . . . . . . .
+. . . . . . . . . .
       </div>
 
+      <!-- Строфа 15 -->
       <div class="stanza">
 <strong>15</strong>
+И полно, я заговорился,
+А как мой Сашка пировать
+С <span class="teen-val">.......</span><span class="adult-val">блядьми</span> в трактире научился,
+Я и забыл вам рассказать.
 Не знаю, право, я, природный
 Умишка маленький в нем был
 Иль пансион учено-модный
@@ -349,12 +385,13 @@
 Кой в чем довольно успевал:
       </div>
 
+      <!-- Строфа 16 -->
       <div class="stanza">
 <strong>16</strong>
 Мог изъясняться по-французски
 И по-немецки лепетать,
 А что касается по-русски,
-<span class="term" onclick="loadComm('onegin_french_verses')">То даже рифмы стал кропать.</span>
+<span class="term" onclick="loadComm('parody_onegin_rifmy_kropat')">То даже рифмы стал кропать</span>.
 Хоть математике учиться
 Охоты вовсе не имел,
 Но поколоться, порубиться
@@ -365,10 +402,11 @@
 Сказать, чтоб он невежда был!
       </div>
 
+      <!-- Строфа 17 -->
       <div class="stanza">
 <strong>17</strong>
 Притом же, правду-матку молвить,
-<span class="term" onclick="loadComm('phrase_umen_nauchen')">Умен — не то, что научен:</span>
+Умен — не то, что научен:
 Иной куда гораздо молвит —
 Переучен, а не умен!
 По-моему, семинариста
@@ -381,6 +419,7 @@
 И об науках толковать.
       </div>
 
+      <!-- Строфа 18 -->
       <div class="stanza">
 <strong>18</strong>
 Итак, ни слова об науках...
@@ -394,25 +433,27 @@
 Судить решительно и смело
 Умом своим о всех вещах
 И тлеть враждой закоренелой
-<span class="term" onclick="loadComm('variant_shelmy_moski')">К мохнатым шельмам в хомутах!</span>
+К <span class="term" onclick="loadComm('slang_mokhnatye_shelmy')">мохнатым шельмам</span> в хомутах!
       </div>
 
+      <!-- Строфа 19 -->
       <div class="stanza">
 <strong>19</strong>
 Он их терпеть не мог до смерти,
 И в метафизику его
 Ни мощи, ангелы, ни черти,
-<span class="term" onclick="loadComm('cens_two_books')"><span class="teen-val">Ни обе книги — ничего</span><span class="adult-val">Ни обе бляди — ничего</span></span>
+<span class="term" onclick="loadComm('cens_dve_knigi_blyadi')">Ни <span class="teen-val">обе книги</span><span class="adult-val">обе бляди</span> — ничего</span>
 Ни так, ни эдак не входили,
-<span class="term" onclick="loadComm('plato_socrates')">И как ученый муж Платон
+<span class="term" onclick="loadComm('philosophy_platon_sokrat_immortality')">И как ученый муж Платон
 Его с Сократом ни учили,
-Чтобы бессмертью верил он,</span>
+Чтобы бессмертью верил он</span>,
 Он ничему тому не верит:
-«Всё это — сказки», — говорит,
-<span class="term" onclick="loadComm('phrase_arshin_god')">Своим аршином бога мерит</span>
+«Всё это — сказки»,— говорит,
+<span class="term" onclick="loadComm('phrase_svoim_arshinom_boga')">Своим аршином б&lt;ога&gt; мерит</span>
 И в церковь гроша не дарит.
       </div>
 
+      <!-- Строфа 20 -->
       <div class="stanza">
 <strong>20</strong>
 Я для того распространяюсь
@@ -425,19 +466,20 @@
 Он скажет сам, что он такой.
 Конечно, многим не по вкусу
 Такой безбожный сорванец,
-Хоть и не верит он Исусу,
+Хоть и не верит он И&lt;су&gt;су,
 Но, право, добрый молодец!
       </div>
 
+      <!-- Строфа 21 -->
       <div class="stanza">
 <strong>21</strong>
 Вот всё, чему он научился,
 Свидетель — университет!
-<span class="term" onclick="loadComm('art_raphael')">Хотя б сам Рафаэль трудился —
-Не лучше б снял с него портрет.</span>
+<span class="term" onclick="loadComm('art_rafael_santi')">Хотя б сам Рафаэль</span> трудился —
+Не лучше б снял с него портрет.
 Теперь, какими же судьбами,
 Меня вы спросите опять,
-<span class="teen-val">Сидит в трактире он с .......?</span><span class="adult-val">Сидит в трактире он с блядьми?</span>
+Сидит в трактире он с <span class="teen-val">.......</span><span class="adult-val">блядями</span>?
 Извольте слушать и молчать.
 Рожденный пылким от природы,
 Недолго был он средь оков:
@@ -445,6 +487,7 @@
 И стал свободен, был таков.
       </div>
 
+      <!-- Строфа 22 -->
       <div class="stanza">
 <strong>22</strong>
 Как вихрь иль конь мылистый в поле
@@ -453,36 +496,38 @@
 Узрел я в пламени страстей.
 Не вы — театры, маскерады,
 Не дам московских лучший цвет,
-<span class="term" onclick="loadComm('vocab_petimetr')">Не петиметры, не наряды —</span>
+<span class="term" onclick="loadComm('costume_petimetry_naryady')">Не петиметры, не наряды</span> —
 Кипящих дум его предмет.
 Нет, не таких мой Саша правил;
-<span class="term" onclick="loadComm('vocab_bonton')">Он не был отроду бонтон,</span>
+Он не был отроду <span class="term" onclick="loadComm('vocab_bonton')">бонтон</span>,
 И не туда совсем направил
 Полет орлиный, быстрый он.
       </div>
 
+      <!-- Строфа 23 -->
       <div class="stanza">
 <strong>23</strong>
 Туда, где шумное веселье
 В роях неистовых кипит,
 Отколь все света принужденья
 И скромность ложная бежит;
-<span class="term" onclick="loadComm('myth_bacchus')">Туда, где Бахус полупьяный</span>
-<span class="term" onclick="loadComm('myth_momus')">Об руку с Момусом сидит,</span>
-<span class="term" onclick="loadComm('myth_diana_erotic')">И с сладострастною Дианой,</span>
+Туда, где <span class="term" onclick="loadComm('myth_bakhus')">Бахус</span> полупьяный
+Об руку с <span class="term" onclick="loadComm('myth_momus')">Момусом</span> сидит,
+И с <span class="term" onclick="loadComm('myth_sladostrastnaya_diana')">сладострастною Дианой</span>,
 Разнежась, юноша шалит;
 Туда, туда всегда стремились
 Все мысли друга моего,
-И Вакх и Момус веселились,
+И <span class="term" onclick="loadComm('myth_vakkh')">Вакх</span> и Момус веселились,
 Приняв в товарищи его.
       </div>
 
+      <!-- Строфа 24 -->
       <div class="stanza">
 <strong>24</strong>
 В его пирах не проливались
-<span class="term" onclick="loadComm('drinks_noble_wines')">Ни Дон, ни Рейн и ни Ямай!</span>
+<span class="term" onclick="loadComm('drinks_don_reyn_yamay')">Ни Дон, ни Рейн и ни Ямай!</span>
 Но сильно, сильно разливались
-<span class="term" onclick="loadComm('drinks_sivolday')">Иль пунш, иль грозный сиволдай.</span>
+Иль <span class="term" onclick="loadComm('drinks_punsh_sivolday')">пунш, иль грозный сиволдай</span>.
 Ах, время, времячко лихое!
 Тебя опять не наживу,
 Когда, бывало, с Сашей двое
@@ -493,33 +538,33 @@
 О наших буйственных делах.
       </div>
 
+      <!-- Строфа 25 -->
       <div class="stanza">
 <strong>25</strong>
-Деру <span class="term" onclick="loadComm('maykov_elisei_night')">«завесу черной нощи»</span>
+Деру <span class="term" onclick="loadComm('parody_maykov_zavesa_noshchi')">«завесу черной нощи»</span>
 С прошедших, милых сердцу дней
-И вижу: в Марьиной мы роще
+И вижу: в <span class="term" onclick="loadComm('geo_maryina_roshcha')">Марьиной мы роще</span>
 Блистаем славою своей!
-Ермолки, взоры и походка —
+<span class="term" onclick="loadComm('costume_ermolki')">Ермолки</span>, взоры и походка —
 Всё дышит жизнью и поет;
-<span class="term" onclick="loadComm('drinks_erofa')">Табак, ерофа</span>, пиво, водка
+Табак, <span class="term" onclick="loadComm('drinks_erofa_nastoyka')">ерофа</span>, <span class="text-variant" onclick="loadComm('variant_ogarev_tabak')">пиво, водка</span>
 Разит, и пышет, и несет...
-Идем, волнуясь величаво, —
+Идем, волнуясь величаво,—
 И все дорогу нам дают,
 А девки влево и направо
 От нас со трепетом бегут.
       </div>
 
+      <!-- Строфа 26 -->
       <div class="stanza">
 <strong>26</strong>
 Идем... и горе тебе, дерзкий,
 Взглянувший искоса на нас!
-«Молчать, — кричим, насупясь зверски, —
+«Молчать,— кричим, насупясь зверски,—
 Иль выбьем потроха тотчас!»
-<span class="teen-val">Толпа ...... иль дев стыдливых
+Толпа ль <span class="teen-val">......</span><span class="adult-val">блядей</span> иль дев стыдливых
 Попалась в давке тесной нам,
-Целуем, ..... смазливых</span><span class="adult-val">Толпа блядей иль дев стыдливых
-Попалась в давке тесной нам,
-Целуем, щупаем смазливых</span>
+Целуем, <span class="teen-val">.....</span><span class="adult-val">щупаем</span> смазливых
 И харкаем в глаза каргам.
 Кричим, поем, танцуем, свищем —
 Пусть дураки на нас глядят!
@@ -527,81 +572,92 @@
 Пусть как угодно говорят!
       </div>
 
+      <!-- Строфа 27 -->
       <div class="stanza">
 <strong>27</strong>
 Но вот... темнее и темнее.
 Народ разбрелся по домам.
 «Извозчик!» — «Здесь, сударь!» — «Живее,
-<span class="teen-val">Пошел на Сретенку к .....!</span><span class="adult-val">Пошел на Сретенку к блядям!»</span>
+Пошел на <span class="term" onclick="loadComm('geo_sretenka_street')">Сретенку</span> к <span class="teen-val">.....</span><span class="adult-val">блядям</span>!»
 — «Но, но!» И дрожки задрожали;
 Летим, Москва летит — и вот
 К знакомым девкам прискакали,
 Запор сломали у ворот.
 <span class="teen-val">Идем ......... ругаясь
-........ банты на штанах,</span><span class="adult-val">Идем, по-матерну ругаясь,
-Врастяжку банты на штанах,</span>
+........ банты на штанах</span><span class="adult-val">Идем по-матерну ругаясь
+В разстежку банты на штанах</span>,
 И, боязливо извиняясь,
 Нам светит <span class="term" onclick="loadComm('vocab_bandersha')">бандерша</span> в сенях.
       </div>
 
+      <!-- Строфа 28 -->
       <div class="stanza">
 <strong>28</strong>
-<span class="teen-val">«.............................</span><span class="adult-val">«Мне Танька, а тебе Анюта», —</span>
+<span class="teen-val">«.. ...... . .... ......»</span><span class="adult-val">«Мне Танька, а тебе Анюта»</span>,—
 Скосившись, Саша говорит.
 Неоценимая минута,
 Тебя никто не изъяснит!
-<span class="term" onclick="loadComm('barkov_priap')">Приап, Приап! <span class="teen-val">Плещи .....!</span><span class="adult-val">Плещи мудями!</span></span>
+<span class="term" onclick="loadComm('parody_barkov_priap')">Приап, Приап! Плещи <span class="teen-val">м…ми</span><span class="adult-val">мудями</span>!</span>
 Тебя достойный фимиам
 Твоими верными сынами
-Сейчас вскурится к облакам!
-<span class="teen-val">О ......., мизогины!</span><span class="adult-val">О онанисты, мизогины!</span>
+Сейчас <span class="term" onclick="loadComm('customs_vskuritsya_fukht')">вскурится к облакам</span>!
+О <span class="teen-val">.......</span><span class="adult-val">онанисты</span>, мизогины!
 Вам слова два теперь скажу,
 Какой божественной картины
-<span class="term" onclick="loadComm('vocab_abris')">Вам легкий абрис покажу!</span>
+Вам легкий <span class="term" onclick="loadComm('vocab_legkiy_abris')">абрис</span> покажу!
       </div>
 
+      <!-- Строфа 29 -->
       <div class="stanza">
 <strong>29</strong>
 Растянута, полувоздушна,
-<span class="term" onclick="loadComm('myth_calypso')">Калипса</span> юная лежит,
-<span class="teen-val teen-censored" onclick="loadComm('parody_istomina')">..............................
-.............................. [Пародия на танец Истоминой ⓘ]</span><span class="adult-val"><span class="term" onclick="loadComm('parody_istomina')">Елде грозному послушна,
+<span class="term" onclick="loadComm('myth_kalipso')">Калипса</span> юная лежит,
+<span class="teen-val teen-censored" onclick="loadComm('parody_istomina_dance')">. . . . . . . . . .
+. . . . . . . . . .
+. . . . . . . . . .
+. . . . . . . . . .
+. . . . . . . . . .
+. . . . . . . . . .
+. . . . . . . . . .
+. . . . . . . . . .</span><span class="adult-val"><span class="term" onclick="loadComm('parody_istomina_dance')">Ебале грозному послушна,
 Она и млеет и дрожит.
 Одна нога коснулась полу,
-Другая нежно на отлет,
+Другая, нежно на отлет,
 Одна рука спустилась долу,
-Другая к персям друга жмет,
+Другая, к персям друга жмет.
 И вьется жопою атласной,
 И изгибается кольцом,</span></span>
 И изнывает сладострастно
 В томленье пылком и живом.
       </div>
 
+      <!-- Строфа 30 -->
       <div class="stanza">
 <strong>30</strong>
-Нет, нет! И абрис невозможно
+Нет, нет! И <span class="term" onclick="loadComm('vocab_abris_repetition')">абрис</span> невозможно
 Такой картины начертать.
 Чтоб это чувствовать, то должно
 Самим собою испытать.
 Но вот под гибкими перстами
-Поет гитара <span class="term" onclick="loadComm('dance_contredanse')">контроданс</span>,
-<span class="teen-val">И по-козлиному с .......</span><span class="adult-val">И по-козлиному с блядями</span>
-Прекрасный сочинился танц!
+Поет гитара <span class="term" onclick="loadComm('dance_kontredans')">контроданс</span>,
+И по-козлиному с <span class="teen-val">.......</span><span class="adult-val">блядями</span>
+Прекрасный <span class="text-variant" onclick="loadComm('variant_sochinilsya_tants')">сочинился танц</span>!
 Возись! Пунш плещет, брызжет пиво,
-<span class="term" onclick="loadComm('measure_polshtof')">Полштофы</span> с рюмками летят,
-А колокольчик несонливый
-Уж бьет заутрени набат...
+<span class="term" onclick="loadComm('measures_polshtofy')">Полштофы</span> с рюмками летят,
+А <span class="term" onclick="loadComm('police_kolokolchik_nesonlivy')">колокольчик несонливый</span>
+Уж бьет заутрени <span class="term" onclick="loadComm('mores_zautreni_nabat')">набат</span>...
       </div>
 
+      <!-- Строфа 31 -->
       <div class="stanza">
 <strong>31</strong>
 Дым каждую туманил кровлю,
-Ползли <span class="term" onclick="loadComm('vocab_erygi')">ерыги</span> к кабакам,
-Мохнатых полчища — на ловлю,
+Ползли <span class="term" onclick="loadComm('vocab_erygi_police')">ерыги</span> к кабакам,
+<span class="term" onclick="loadComm('police_mokhnatykh_polchishcha')">Мохнатых полчища — на ловлю</span>,
 И шайки нищих там и сям.
 Вот те, которые в бордели,
 Как мы, ночь в пьянстве провели,
-<span class="teen-val">Покинув ........ постели,</span><span class="adult-val"><span class="term" onclick="loadComm('cens_ogarev_posteli')">Покинув мягкие постели,</span></span>
+Покинув <span class="text-variant" onclick="loadComm('variant_posteli_ogarev')">мягкие постели</span>,
 Домой в пуху и пятнах шли.
 Прощайте ж, милые красотки!
 Теперь нам нечего зевать!
@@ -609,102 +665,238 @@
 Пошли домой мы с Сашкой спать.
       </div>
 
+      <!-- Строфа 32 -->
+      <div class="stanza">
+<strong>32</strong>
+Ах, много, много мы шалили!
+Быть может, пошалим опять;
+И много, много старой были
+Друзьям найдется рассказать
+Во славу университета.
+Как будто вижу я теперь
+Осаду нашу комитета:
+Вот Сашка мой стучится в дверь...
+«Кто наглый там шуметь изволит?» —
+Оттуда голос закричал.
+«Увидит тот, кто дверь отворит»,—
+Сердито Саша отвечал.
+      </div>
+
+      <!-- Строфа 33 -->
+      <div class="stanza">
+<strong>33</strong>
+Сказав, как вихорь устремился —
+И дверь низверглася с крючком,
+И, заревевши, покатился
+Лакей с железным фонарем.
+Се ты, о <span class="term" onclick="loadComm('person_somov_nezabvenny')">Сомов незабвенный</span>!
+Твоею мощной пятерней
+Гигант, в затылок пораженный,
+Слетел по лестнице крутой!
+Как лютый волк стремится Сашка
+На девку бледную одну,
+И распростерлася Дуняшка,
+Облившись кровью, на полу.
+      </div>
+
+      <!-- Строфа 34 -->
+      <div class="stanza">
+<strong>34</strong>
+Какое страшное смятенье,
+И дикий вопль, и крик, и рев,
+И стон, и жалкое моленье
+Нещадно........дев!
+Но вдруг огнями осветился
+Пространный комитета двор,
+И с кучерами появился
+Свирепых <span class="term" onclick="loadComm('police_bufeli_dozor')">буфелей</span> дозор.
+«Держи!» — повсюду крик раздался,
+И быстро бросились на нас;
+И бой ужасный завязался...
+О грозный день, о лютый час!
+      </div>
+
+      <!-- Строфа 35 -->
+      <div class="stanza">
+<strong>35</strong>
+<span class="term" onclick="loadComm('costume_kapoty')">Капоты</span>, шляпы и фуражки
+С героев буйственных летят,
+И — что я зрю? — о небо! Сашке
+Веревкой руки уж крутят!..
+«<span class="term" onclick="loadComm('vocab_mon_cher')">Mon cher!</span> — кричит он, задыхаясь.—
+Сюда! Здесь всех не перебью!»
+Народ же, больше собираясь,
+На жертву кинулся свою.
+Ах, Сашка! Что с тобою будет?
+Тебя <span class="term" onclick="loadComm('punishment_rogatka')">в рогатку</span> закуют,
+И рой друзей тебя забудет...
+Нет, нет! Уж Калайдович тут!
+      </div>
+
+      <!-- Строфа 36 -->
+      <div class="stanza">
+<strong>36</strong>
+Он тут! И нет тебе злодея!
+Твою веревку он сорвал
+И, как медведь, всё свирепея,
+Во прах всех буфелей поклал.
+Одной своей телячьей шапки
+Уже вовек ты не узришь,
+А сам, безвреден после схватки,
+Опять за пуншем ты сидишь;
+Пируй теперь, мой Жданов милый,
+Твоя обида отмщена,
+И проясни свой лик унылый
+Стаканом пенного вина.
+      </div>
+
+      <!-- Строфа 37 -->
+      <div class="stanza">
+<strong>37</strong>
+И ты, мой друг в тогдашни годы,
+Теперь — подлец и негодяй,
+Настрой-ка, Пузин, брат, аккорды,
+Возьми гитару и взыграй.
+Прочь, прочь, Надеждин, от бильярда
+Коль проиграл, так не робей!
+<span class="term" onclick="loadComm('vocab_donnez_nous_jean')">Donnez-nous, Jean, un peu</span> <span class="term" onclick="loadComm('customs_gishard_tobacco')">гишарда</span>!
+Коврайский! Вот сивуха — пей!
+А ты, наш чайный разливатель,
+О Кушенский, не отходи
+И, как порядка наблюдатель,
+<span class="term" onclick="loadComm('genre_druzheskoe_poslanie')">За пиром радостным гляди!</span>
+      </div>
+
+      <!-- Строфа 38 -->
+      <div class="stanza">
+<strong>38</strong>
+Засядем дружеским собором
+За стол, уставленный вином,
+И звучным, громогласным хором
+Лихую песню запоем...
+Летите грусти и печали
+К <span class="teen-val">.......................</span><span class="adult-val">ебене матери в пизду</span>
+<span class="teen-val">Давно, давно мы не бывали</span><span class="adult-val">Давно, давно мы не ебались</span>
+В таком божественном кругу!
+<span class="teen-val">Скажите, .... , припевая:</span><span class="adult-val">Скачите, бляди, припевая:</span>
+«<span class="term" onclick="loadComm('vocab_vivat')">Виват</span> наш Саша, молодец!»
+<span class="teen-val">А я, главу сию кончая,
+Скажу: «Ей-богу, удалец!»</span><span class="adult-val">А я, главу сию кончая,
+Скажу: «Ей-богу, молодец!»</span>
+      </div>
+
       <h2 class="canto-title">Глава вторая</h2>
 
+      <!-- Строфа 1 -->
       <div class="stanza">
+<strong>1</strong>
 Чуть освещаемый луною,
-Дремал в тумане Петербург,
+Дремал в тумане Петербург
 Когда с уныньем и тоскою
 Узрел верхи его мой друг.
 На облучке, спустивши ноги,
-<span class="term" onclick="loadComm('vocab_zabytyo')">В забытьи жалком он сидел</span>
+<span class="term" onclick="loadComm('vocab_zabytyi')">В забытьи</span> жалком он сидел
 И об оконченной дороге
 В сердечной думе сожалел,
-Стакан последний <span class="term" onclick="loadComm('drinks_sivolday')">сиволдая</span>
-<span class="term" onclick="loadComm('customs_zastava')">Перед заставой осушил</span>,
+Стакан последний <span class="term" onclick="loadComm('vocab_sivolday')">сиволдая</span>
+<span class="term" onclick="loadComm('customs_moskovskaya_zastava')">Перед заставой</span> осушил,
 И, из телеги вылезая,
-Он молчалив и смутен был.
+Он молчалив и страшен был.
       </div>
 
+      <!-- Строфа 2 -->
       <div class="stanza">
+<strong>2</strong>
 Нева широкая струилась
 Близ постоялого двора,
 И недалёко серебрилось
-<span class="term" onclick="loadComm('geo_monument_peter')">Изображение Петра.</span>
+<span class="term" onclick="loadComm('geo_medny_vsadnik')">Изображение Петра</span>.
 Всё было тихо; не спокойно
 В душе лишь Саши моего,
-<span class="term" onclick="loadComm('grammar_smykalisya')">И не смыкалися невольно</span>
-Глаза потухшие его,
+<span class="term" onclick="loadComm('grammar_smykalisya')">И не смыкалися</span> невольно
+Глаза померкшие его,
 Недавно буйного студента.
-<span class="term" onclick="loadComm('student_pipe_smoking')">С дымящимся от трубки ртом,</span>
-<span class="term" onclick="loadComm('parody_medny_vsadnik')">Он, прислонясь у монумента,
-Стоял с потупленным челом.</span>
+<span class="term" onclick="loadComm('custom_pipe_smoking')">С дымящимся от трубки ртом</span>,
+<span class="term" onclick="loadComm('parody_onegin_granit')">Он, прислонясь у монумента,
+Стоял с потупленным челом</span>.
       </div>
 
+      <!-- Строфа 3 -->
       <div class="stanza">
+<strong>3</strong>
 «Увы, увы!.. часы веселья,
 Вы пролетели, будто сон!»
 Так в петербургском новоселье,
-Вздохнувши тяжко, молвил он:
+Вздохнувши тяжко, мыслил он:
 «Быть может, долго, молодые
 Красотки, мне вас не видать!..
-<span class="teen-val">. . . . . . . . . . . .</span><span class="adult-val">. . . . . . . . . . . .</span>
-<span class="teen-val">. . . . . . . . . . . .</span><span class="adult-val">. . . . . . . . . . . .</span>
-<span class="teen-val">. . . . . . . . . . . .</span><span class="adult-val">. . . . . . . . . . . .</span>
-<span class="teen-val">. . . . . . . . . . . .</span><span class="adult-val">. . . . . . . . . . . .</span>
-<span class="teen-val">. . . . . . . . . . . .</span><span class="adult-val">. . . . . . . . . . . .</span>
-<span class="teen-val">. . . . . . . . . . . .</span><span class="adult-val">. . . . . . . . . . . .</span>
+<span class="teen-val teen-censored" onclick="loadComm('cens_stanza_beauty_lines')">. . . . . . . . . . . . . . . .</span><span class="adult-val">И долго жопоньки крутые</span>
+<span class="teen-val teen-censored" onclick="loadComm('cens_stanza_beauty_lines')">. . . . . . . . . . . . . . . .</span><span class="adult-val">На вас не стану замирать!</span>
+<span class="teen-val teen-censored" onclick="loadComm('cens_stanza_beauty_lines')">. . . . . . . . . . . . . . . .</span><span class="adult-val">И нежить пламенной рукою</span>
+<span class="teen-val teen-censored" onclick="loadComm('cens_stanza_beauty_lines')">. . . . . . . . . . . . . . . .</span><span class="adult-val">И прижимать к моим устам,</span>
+<span class="teen-val teen-censored" onclick="loadComm('cens_stanza_beauty_lines')">. . . . . . . . . . . . . . . .</span><span class="adult-val">И припадать, резвясь порою,</span>
+<span class="teen-val teen-censored" onclick="loadComm('cens_stanza_beauty_lines')">. . . . . . . . . . . . . . . .</span><span class="adult-val">К упругим полненьким грудям.</span>
+      </div>
 
+      <!-- Строфа 4 -->
+      <div class="stanza">
+<strong>4</strong>
 Прощайте, звонкие стаканы,
-<span class="term" onclick="loadComm('drinks_punch')">И пунш</span>, <span class="term" onclick="loadComm('drinks_erofa')">и мощный ерофей!</span>
+И <span class="term" onclick="loadComm('cross_punch_canto1')">пунш</span>, и грозный <span class="term" onclick="loadComm('cross_erofey_canto1')">ерофей</span>!
 Быть может, други мои пьяны
-<span class="teen-val">Теперь пируют у ......</span><span class="adult-val">Теперь пируют у блядей,</span>
-И сны приятные осенят
+Теперь пируют у <span class="teen-val teen-censored" onclick="loadComm('cens_brothel_feast')">...</span><span class="adult-val"><!-- ВСТАВИТЬ_ТЕКСТ_ПРОПУСКА_СТРОФА_4 --></span>
+И сны приятные <span class="term" onclick="loadComm('vocab_osenyat')">осенят</span>
 Глаза, сомкнутые вином,
-И яркие лучи осветят
-<span class="term" onclick="loadComm('vocab_upoyenny')">Их, упоённых крепким сном!</span>
-Увы, увы, а я, несчастный,
+И яркие лучи остветят
+Их, <span class="term" onclick="loadComm('vocab_upoyenny')">упоённых</span> сладким сном!
+Увы, увы! А я, несчастный,
 Я б проклял восходящий день!..»
-Умолк… и луч денницы ясной
+Умолк... и луч денницы ясной
 Рассеивал ночную тень.
       </div>
 
+      <!-- Строфа 5 -->
       <div class="stanza">
-Эх, Сашка! Как тебе не стыдно,
+<strong>5</strong>
+Ах, Сашка! Как тебе не стыдно,
 Сробел, лихая голова!
 Ей-богу, слышать нам обидно
 Такие вздорные слова.
-<span class="term" onclick="loadComm('rhetoric_baba')">Когда ты был такою бабой?</span>
-Когда так трусил и тужил?
+<span class="term" onclick="loadComm('rhetoric_baba_reproach')">Когда ты был такою бабой?</span>
+Когда так трусил и <span class="term" onclick="loadComm('vocab_tuzhit')">тужил</span>?
 Как мальчик глупенький и слабый
-<span class="term" onclick="loadComm('bio_rozgi')">При виде розог приуныл.</span>
-<span class="term" onclick="loadComm('vocab_kurolesit')">Что ты в Москве накуролесил</span>
-<span class="term" onclick="loadComm('phrase_gol_kak_sokol')">И гол остался, как сокол,</span> —
-Так и раскис и нос повесил…
-<span class="term" onclick="loadComm('address_brat')">Пошёл, брат</span>, к дядюшке, пошёл!..
+При виде розог, <span class="term" onclick="loadComm('bio_rozgi_discipline')">приуныл</span>.
+Что ты в Москве <span class="term" onclick="loadComm('vocab_kurolesit')">накуролесил</span>
+<span class="term" onclick="loadComm('phrase_gol_kak_sokol')">И гол остался, как сокол</span>,
+<span class="term" onclick="loadComm('phrase_nos_povesil')">И как сова ты нос повесил</span>...
+Пошёл, <span class="term" onclick="loadComm('address_brat_student')">брат</span>, к дядюшке, пошёл!..
       </div>
 
+      <!-- Строфа 6 -->
       <div class="stanza">
+<strong>6</strong>
 И что ж, друзья?.. Ведь справедливо
 Он дядю чёртом называл:
 Ведь как же тот красноречиво
-Его сначала отщелка́л!
+Его сначала <span class="term" onclick="loadComm('vocab_otshelkal')">отщелкал</span>!
 Такую задал передрягу,
 Такую песенку отпел,
-Так отприветствовал беднягу,
-Что тот лишь слушал да потел;
-Потом всё тише, да смирнее,
+Так отприветствовал бродягу,
+Что тот лишь слушал да глядел;
+Потом всё тише да смирнее,
 Потом не стал уж и кричать,
-Потом все ласковей, добрее,
+Всё ласковее, всё добрее,
 Потом и Сашей начал звать.
       </div>
 
+      <!-- Строфа 7 -->
       <div class="stanza">
+<strong>7</strong>
 А Сашка тут и распустился,
 И чувствует, что виноват,
 Раскаялся — и прослезился.
 А дядя?.. Боже мой, как рад!
-<span class="term" onclick="loadComm('onegin_povesa')">Повесу грязного обмыли</span>,
+<span class="term" onclick="loadComm('parody_onegin_povesa')">Повесу грязного отмыли</span>,
 Сейчас белья ему, сапог,
 И с головы принарядили,
 Как лучше быть нельзя, до ног.
@@ -714,97 +906,111 @@
 Опять в кругу своих забав!
       </div>
 
+      <!-- Строфа 8 -->
       <div class="stanza">
+<strong>8</strong>
 Где вид московского гуляки?
 Куда девался пухлый лик?
-В англо-кургузом модном фраке,
-В отличной шляпе эласти́к,
+В <span class="term" onclick="loadComm('costume_anglo_kurguzy')">англо-кургузом</span> модном фраке,
+В отличной <span class="term" onclick="loadComm('cross_shlyapa_elastik')">шляпе эластик</span>,
 В красивом бархатном жилете,
 Мой Сашка тот же, да не тот.
 И вот, сбоченясь, на проспекте
 Он с миной важною идет.
-<span class="term" onclick="loadComm('coins_chervontsy')">Червонцы светлы, драгоценны</span>,
-<span class="term" onclick="loadComm('theater_first_row')">И на театры в первый ряд
-Билет на креслы ежедневный</span>
-В кармане брюк его лежат!
+<span class="term" onclick="loadComm('coins_chervontsy_gold')">Червонцы светлы, драгоценны</span>,
+И на театры в первый ряд
+Билет на кресла ежедневный
+<span class="term" onclick="loadComm('theater_parter_kresla')">В кармане брюк его лежат</span>!
       </div>
 
+      <!-- Строфа 9 -->
       <div class="stanza">
+<strong>9</strong>
 С какою миною кичливой
-<span class="term" onclick="loadComm('vocab_frant')">На прочих франтов он глядит</span>,
-Какой улыбкою спесивой
+На прочих <span class="term" onclick="loadComm('vocab_frant_dandy')">франтов</span> он глядит,
+Какой улыбкою <span class="term" onclick="loadComm('vocab_spesivy')">спесивой</span>
 И дам и барышень дарит!
 С какой приятностью играет
-<span class="term" onclick="loadComm('accessory_khlystik')">И машет хлыстиком своим</span>,
+И машет <span class="term" onclick="loadComm('accessory_khlystik_cane')">хлыстиком своим</span>,
 И как искусно задевает
 Под ножки девушкам он им;
-<span class="term" onclick="loadComm('vocab_bonton')">Какой бонтон в осанке, взорах</span>,
-Какую важность возымел
-<span class="term" onclick="loadComm('carriage_ressory')">И вот на ухарских рессорах</span>
+Какой <span class="term" onclick="loadComm('cross_bonton_canto1')">бонтон</span> в осанке, взорах,
+Какую важность возымел!
+И вот на <span class="term" onclick="loadComm('carriage_ukharskie_ressory')">ухарских рессорах</span>
 В театр, разлегшись, полетел.
       </div>
 
+      <!-- Строфа 10 -->
       <div class="stanza">
+<strong>10</strong>
 Вошёл. С небрежностью лакею
 Билет, сморкаясь, показал
 И, изогнувши важно шею,
 Глазами ложи пробежал.
-Взгремела Фрейшица музы́ка;
-Гром плесков залу огласил,
+Взгремела <span class="term" onclick="loadComm('opera_freyshits_weber')">«Фрейшица» музыка</span>;
+Гром плесков залу оглушил,
 И всяк от мала до велика
-И упоён и тронут был.
-Что ж Саша? С видом пресыщенья
+И упоен и тронут был.
+Что ж Сашка? <span class="term" onclick="loadComm('parody_onegin_teatr_lozhi')">С видом пресыщенья
 Разлегшись в креслах, он сидел,
 И лишь с улыбкой сожаленья
-В четыре стороны глядел.
+В четыре стороны смотрел</span>.
       </div>
 
+      <!-- Строфа 11 -->
       <div class="stanza">
-<span class="term" onclick="loadComm('theater_fora')">Напрасно fora все кричали;</span>
-Он свой выдерживал <span class="term" onclick="loadComm('vocab_bonton')">bonton</span>,
+<strong>11</strong>
+Напрасно <span class="term" onclick="loadComm('fora')">fora</span> все кричали
+Он свой выдерживал <span class="term" onclick="loadComm('cross_bonton_french')">bon ton</span>,
 И в самом действия начале
-Спокойно пунш пить вышел он;
-<span class="term" onclick="loadComm('person_dyurova')">Напрасно, милая Дюрова,</span>
+Спокойно пить <span class="term" onclick="loadComm('cross_punch_teatr')">пунш</span> вышел вон;
+Напрасно, <span class="term" onclick="loadComm('person_alexandrina_dyurova')">милая Дюрова</span>,
 Твой голос всех обворожал;
 Он не расслышал ни полслова
-<span class="term" onclick="loadComm('theater_fora')"><span class="teen-val">Но только …… увидал.</span><span class="adult-val">Но только блядь в ложе увидал.</span></span>
-Напрасно, Антонин воздушный
-Ты резал воздух, как зефир,
+Но только <span class="teen-val teen-censored" onclick="loadComm('fora')">...</span><span class="adult-val">жопу</span> увидал;
+Напрасно, <span class="term" onclick="loadComm('person_antonin_dancer')">Антонин воздушный</span>
+Ты резал воздух, как зефир:
 Для тону Саше будет скучно,
 Хотя б растешил ты весь мир.
       </div>
 
+      <!-- Строфа 12 -->
       <div class="stanza">
-Да и нельзя же в самом деле…
+<strong>12</strong>
+Да и нельзя же, в самом деле...
 Смотрите, он в каком кругу!
-<span class="teen-val">Народ не тот здесь, что в ……</span><span class="adult-val">Народ не тот здесь, что в борделе,</span>
-Всё видишь ленту иль звезду!
-И, шутки в сторону откинуть, —
+Народ не тот здесь, что в бордели,
+Иль видишь <span class="term" onclick="loadComm('status_lenta_i_zvezda')">ленту, иль звезду</span>!
+И, шутки в сторону откинуть,
 С ним рядом первая ведь знать;
-Итак, пристойно ль рот разинуть,
-Степного Фоку тут играть?
+И непристойно ль рот разинуть,
+<span class="term" onclick="loadComm('phrase_igrat_foku')">Степного Фоку тут играть</span>.
 Так, раз и твердо рассудивши,
-Всегда мой Сашка поступал,
+Всегда мой Сашка поступал
 И всякий раз, в театре бывши,
 Роль полусонного играл.
       </div>
 
+      <!-- Строфа 13 -->
       <div class="stanza">
+<strong>13</strong>
 Но как же был зато он скромен
 Во всех поступках и словах,
 И полутихо-нежно-томен
-При зорких дяденьки глазах.
-С каким терпеньем и почтеньем
+При зорких дяденьки глазах;
+С каким почтеньем и терпеньем
 Его он слушал по часам,
-С каким, о смех! благоговеньем
+С каким о, смех! — благоговеньем
 Ходил с ним вместе по церквам;
-<span class="term" onclick="loadComm('geo_summer_garden')">По Летнему ль гуляет саду</span> —
+<span class="term" onclick="loadComm('geo_letniy_sad_spb')">По Летнему ль гуляет саду</span>,
 Не свищет песенки, небойсь,
-Хоть будь красотка — ни полвзгляду
-Не кинет прямо или вкось.
+Хоть будь <span class="teen-val teen-censored" onclick="loadComm('cens_stanza_razzhaditsa')">красотка</span><span class="adult-val">разжопа</span> ни полвзгляду
+Не кинет прямо и ни вкось.
       </div>
 
+      <!-- Строфа 14 -->
       <div class="stanza">
+<strong>14</strong>
 С какою пылкостью восторга
 Хвалил он дядины мечты,
 Доказывал премудрость бога,
@@ -812,124 +1018,140 @@
 С каким он жаром удивлялся
 Наполеонову уму
 И как делами восхищался
-Моро, и Нея, и Даву;
+<span class="term" onclick="loadComm('history_napoleon_generals')">Моро, и Нея, и Даву</span>;
 Ругал всех русских без разбора
 И в Эрмитаже от картин
-Не отводил ни рта, ни взора,
-О плут! о шельма, сукин сын!
+Не отводил ни рта, ни взора.
+О плут! О <span class="term" onclick="loadComm('shelma')">шельма</span> , сукин сын!
       </div>
 
+      <!-- Строфа 15 -->
       <div class="stanza">
+<strong>15</strong>
 И потакал, и лицемерил,
-И льстил бессовестно, и врал!
+Ему безжалостно он врал!
 А честный дядя всему верил
-И шельме денежки давал…
-Бывало, только он с Мильонной,
-А дядя: «Где, дружочек, был?» —
-А он (куда какой проворный):
+И <span class="term" onclick="loadComm('shelma')">шельме</span> денежки давал...
+Бывало, только он с <span class="term" onclick="loadComm('geo_millionnaya_street')">Миллионной</span>,
+А дядя: «Где, дружочек, был?»
+А он (куда какой проворный!):
 «Я-с по бульвару всё ходил,
 Потом спуск видел парохода,
 Да Зимний осмотрел дворец.
 Какая ж тихая погода».
-<span class="teen-val">. . . . . . . . . . . . .</span><span class="adult-val">Ах ты, ебаный подлец!</span>
+Ах ты, <span class="teen-val teen-censored" onclick="loadComm('cens_stanza_uncle_scoundrel')">... ...</span><span class="adult-val">ебена мать</span> подлец!
       </div>
 
+      <!-- Строфа 16 -->
       <div class="stanza">
-Ах ты, проклятая <span class="term" onclick="loadComm('vocab_erygi')">ерыга</span>,
-Чего мошенник не соврёт!
-Но хоть ругай — мой забулдыга
-Живёт да песенки поёт…
-Звенит целковыми рублями,
-Летает <span class="term" onclick="loadComm('vocab_frant')">франтиком</span> в садах,
-<span class="teen-val">Пирует, нежится с ……</span><span class="adult-val">Пирует, нежится с блядями</span>
-И суслит водку в погребах.
-Ну, что мне делать с ним прикажешь?
-Не хочет слышать уж про нас…
-Эй, Сашка! или не покажешь
+<strong>16</strong>
+Ах ты, проклятая ерыга,
+Чего мошенник не соврет!
+Но хоть ругай <span class="term" onclick="loadComm('vocab_zaburdyga_friend')">мой забулдыга</span>
+Живёт да песенки поет...
+Звенит <span class="term" onclick="loadComm('coins_tselkovy_rubl')">целковыми рублями</span>,
+Летает <span class="term" onclick="loadComm('frant')">франтиком</span> в садах,
+Пирует, нежится с <span class="teen-val teen-censored" onclick="loadComm('cens_brothel_feast')">...</span><span class="adult-val">блядями</span>
+И сушит водку в погребках.
+Ну что мне делать с ним прикажешь?
+Не хочет слышать уж про нас...
+Эй, Сашка! Или не покажешь
 В Москву своих спесивых глаз?
       </div>
 
+      <!-- Строфа 17 -->
       <div class="stanza">
-Постой! не вечно, брат, рейнвейны
-В Café de France ты будешь пить,
-<span class="teen-val">И шейки обвивать лилейны,</span><span class="adult-val">И сиськи обвивать лилейны,</span>
-И в шляпе эластик ходить!
-Постой! не вечно Петербурга
+<strong>17</strong>
+Постой! Не вечно, брат, <span class="term" onclick="loadComm('drinks_reynveyny_wine')">рейнвейны</span>
+В <span class="term" onclick="loadComm('places_cafe_de_france')">Café de France</span> ты будешь пить,
+И <span class="teen-val teen-censored" onclick="loadComm('cens_stanza_lileyny_touch')">... ...</span><span class="adult-val">щупать жопочки</span><span class="term" onclick="loadComm('epithet_lileyny')">лилейны</span>,
+И в <span class="term" onclick="loadComm('cross_shlyapa_elastik_cafe')">шляпе эластик</span> ходить!
+Постой, не вечно Петербурга
 Красоток будешь целовать,
 Опять любезнейшего друга
 В Москву представят к нам, опять!
 Гуляй, пируй, пока возможно,
 Крути, помадь свой хохолок,
 Минуты упускать не должно,
-Играй, сбоченясь à la coq!
+Играй, сбоченясь <span class="term" onclick="loadComm('vocab_a_la_coq_petukh')">à la coq</span>!
       </div>
 
+      <!-- Строфа 18 -->
       <div class="stanza">
+<strong>18</strong>
 Не выпускай из рук стакана,
-От Каратыгина зевай
+От <span class="term" onclick="loadComm('person_karatygin_actor')">Каратыгина зевай</span>
 И в ресторации с дивана,
-Дымясь в вакштафе, не вставай;
+Дымясь в <span class="term" onclick="loadComm('tobacco_vakshtaf')">вакштафе</span>, не вставай;
 Катайся в лодочках узорных,
-Лови, обманывай жидов
+Лови обманчивых жидов
 И мчись на рысаках проворных
-До поздних полночи часов.
-<span class="teen-val">. . . . . . . . . . . .</span><span class="adult-val">. . . . . . . . . . . .</span>
+До поздних полночи часов
+<span class="teen-val teen-censored" onclick="loadComm('cens_midnight_carriage_brothel')">...</span><span class="adult-val">Про<еб></span> целковенькой в бордели,
 А дядя мыслит кое-что:
-И в дилижансе две недели
+И в <span class="term" onclick="loadComm('transport_dilizhans_coach')">дилижансе</span> две недели
 Тебе уж место нанято.
       </div>
 
+      <!-- Строфа 19 -->
       <div class="stanza">
+<strong>19</strong>
 Различноцветными огнями
-Горит в Москве Кремлёвский сад,
-И пышнопёстрыми рядами
-В нём дамы с <span class="term" onclick="loadComm('vocab_frant')">франтами</span> кишат.
+Горит в Москве <span class="term" onclick="loadComm('geo_kremlevsky_sad_moscow')">Кремлёвский сад</span>,
+И пышно-пестрыми роями
+В нем дамы с <span class="term" onclick="loadComm('cross_franty_garden')">франтами</span> кипят.
 Музыка шумная играет
 На флейтах, бубнах и трубах,
-И гул шумящий завывает
+И гул шумящий зазывает
 Кремля высокого в стенах.
 Какие радостные лица,
 Какой весёлый, милый мир!
 Все обитатели столицы
-Сошлись на общий будто пир
+Сошлись на общий будто пир.
       </div>
 
+      <!-- Строфа 20 -->
       <div class="stanza">
+<strong>20</strong>
 Какое множество букетов,
-<span class="term" onclick="loadComm('fashion_indian_shawls')">Индийских шалей и чепцов,</span>
-<span class="term" onclick="loadComm('accessory_lornet')">Плащей, тюрбанов и лорнетов,</span>
+<span class="term" onclick="loadComm('fashion_indiyskie_shali')">Индийских шалей</span> и чепцов,
+Плащей, тюрбанов и <span class="term" onclick="loadComm('accessory_lornet_glass')">лорнетов</span>,
 Подзорных трубок и очков;
 И смесь роскошная в нарядах,
 И лиц различные черты,
 И выражения во взглядах
-И плутовства, и простоты,
-И ловкости, и неуклюжства,
-И на глазах почтенных дам —
-<span class="term" onclick="loadComm('mores_marriage')">И надоевшее замужство,</span>
-И склонность к модным шалунам.
+И плутовства и простоты,
+И ловкости и неуклюжства,
+И на глазах почтенных дам:
+<span class="term" onclick="loadComm('mores_nadoevshee_zamuzhstvo')">И надоевшее замужство
+И склонность к модным шалунам</span>.
       </div>
 
+      <!-- Строфа 21 -->
       <div class="stanza">
+<strong>21</strong>
 Как из-под шляпки сей игриво
 Глазок прищуренный глядит;
 Что для мужчин она учтива,
 Он очень ясно говорит.
-<span class="term" onclick="loadComm('epithet_lileynaya')">На грудь лилейную другая,</span>
-Власы небрежно разметав,
+На <span class="term" onclick="loadComm('cross_lileynaya')">грудь лилейную</span> другая
+Власы небрежно разметав
 И всех прельстить собой желая,
 Нарочно гордый кажет нрав;
-Другая с нежностью лилеи,
-Иная томно так идёт,
-Но подойди к ней не робея —
-<span class="term" onclick="loadComm('etiquette_podat_ruchku')">Она и ручку подаёт.</span>
+Другая с нежностью <span class="term" onclick="loadComm('poetics_lileya_symbol')">лилеи</span>,
+Иная томно так идет,
+Но <span class="term" onclick="loadComm('etiquette_podat_ruchku')">подойди к ней не робея —
+Она и ручку подает</span>.
       </div>
 
+      <!-- Строфа 22 -->
       <div class="stanza">
+<strong>22</strong>
 Всё живо и разнообразно,
 Всё может мысли породить!
-<span class="term" onclick="loadComm('estate_prikazny')">Там в пух разряженный приказный
-Напрасно ловким хочет быть;</span>
-<span class="term" onclick="loadComm('estate_kupchik')">Здесь купчик, тросточкой играя,</span>
+<span class="term" onclick="loadComm('estate_prikazny_chinovnik')">Там в пух разряженный приказный</span>
+Напрасно ловким хочет быть;
+Здесь <span class="term" onclick="loadComm('estate_kupchik_s_trostochkoy')">купчик, тросточкой играя,</span>
 Как царь доволен сам собой;
 Там, с генералом в ряд шагая,
 Себя тут кажет и портной,
@@ -939,96 +1161,107 @@
 Все трутся и друг друга жмут.
       </div>
 
+      <!-- Строфа 23 -->
       <div class="stanza">
+<strong>23</strong>
 Но что? Не призрак ли мне ложный
-Глаза внезапно ослепил?
+Глаза внезапно осенил?
 Что вижу я? Ужель возможно,
 Чтоб это Сашка мой ходил?..
 Его ухватки и движенья,
-Его осанка, взор и вид…
-Какие странные сомненья…
-И дух и кровь во мне кипит…
-Иду к нему… трясутся ноги…
-Всё ближе милые черты…
-Дрожу, страшусь… колеблюсь… боги!
-О друг любезный, это ты?..
+Его осанка, взор и вид...
+Какое странное сомненье...
+И дух и кровь во мне кипит...
+Иду к нему... трясутся ноги...
+Всё ближе милые черты...
+Дрожу, стремлюсь... колеблюсь... боги!..
+О друг любезный, это ты?
       </div>
 
+      <!-- Строфа 24 -->
       <div class="stanza">
+<strong>24</strong>
 Нет, я завесу опускаю
-На нашу радость и восторг,
-Такой минуты, сколько знаю,
+На нашу радость и восторг.
+Такой минуты, сколь я знаю,
 Никто нам выразить не мог.
 Друзьям же верным и открытым
 И всё желающим узнать,
 Умам чрез меру любопытным
 Довольно, кажется, сказать,
-Что, раз пятнадцать с ним обнявшись
-<span class="term" onclick="loadComm('mores_male_tears')">И оросив слезами грудь,</span>
+Что, раз пятнадцать с ним обнявшись,
+<span class="term" onclick="loadComm('mores_slyozy_obnimanya')">И оросив слезами грудь
 И раз пятнадцать целовавшись,
 В трактир направили мы путь.
+</span>
       </div>
 
+      <!-- Строфа 25 -->
       <div class="stanza">
+<strong>25</strong>
 Не вспомнишь всё, что мы болтали,
 Но всё, что он мне рассказал,
 Вы перед этим прочитали,
-И я ни капли не соврал.
+И я ни слова не соврал.
 Одно лишь только он прибавил,
 Что дядя в университет
 Его ещё на год отправил
 И что довольно с ним монет.
-<span class="teen-val">«Сюда …. ….» — гремящим</span><span class="adult-val">«Сюда винца, блядей!» — гремящим</span>
+«Сюда <span class="teen-val teen-censored" onclick="loadComm('cens_stanza_boisterous_shout')">... ... ...</span><span class="adult-val">ебена матерь бляди</span>» — гремящим
 Своим он гласом возопил,
-<span class="term" onclick="loadComm('drinks_punch')">И пуншем нектарным, кипящим</span>
+И <span class="term" onclick="loadComm('cross_punsh')">пуншем</span> нектарным, кипящим
 В минуту стол обрызган был.
       </div>
 
+      <!-- Строфа 26 -->
       <div class="stanza">
-<span class="term" onclick="loadComm('comm_real_friends')">Ты видел, Jean</span>, когда на дрожках
+<strong>26</strong>
+Ты видел, <span class="term" onclick="loadComm('cross_friends')">Jean</span>, когда на дрожках
 К тебе он быстро подлетел,
 В то время с книгой у окошка,
-Дымясь в вакштафе, ты сидел.
-Ты помнишь, о Каврайский славный,
+Дымясь в <span class="term" onclick="loadComm('cross_gishard_pipe')">гишарде</span>, ты сидел.
+Ты помнишь, о <span class="term" onclick="loadComm('cross_friends')">Каврайский славный</span>,
 Студентов честь и красота,
 Какой ты встречею забавной
 Его порадовал тогда:
-<span class="teen-val">. . . . . . . . . . . . .</span><span class="adult-val">В кафтане, мертвецки пьяным</span>
-<span class="teen-val">. . . . . . . . . . . . .</span><span class="adult-val">Тебя он в нумере застал,</span>
-<span class="teen-val">. . . . . . . . . . . . .</span><span class="adult-val">И ртом вонючим и поганым</span>
-<span class="teen-val">. . . . . . . . . . . . .</span><span class="adult-val">Его не раз ты замарал.</span>
+<span class="text-variant" onclick="loadComm('cens_kavraysky_drunk_room')">В ... мертвецки пьяным</span>
+И ртом вонючим и поганым
+Его не раз ты замарал.
       </div>
 
+      <!-- Строфа 27 -->
       <div class="stanza">
+<strong>27</strong>
 Ты зрел, любезный мой Костюшка,
 Его как стельку самого,
 И снова, толстенькая Грушка,
-<span class="teen-val">Ты страстно нежила его.</span><span class="adult-val">Ты в жопу нежила его.</span>
-<span class="term" onclick="loadComm('vocab_vivat')">Виват</span>, трактиры, <span class="teen-val">и …….</span><span class="adult-val">и бордели!</span>
-Пожива будет ещё вам,
+Ты <span class="teen-val">...</span><span class="adult-val">жопкой</span> нежила его. 
+<span class="term" onclick="loadComm('cross_vivat_canto1')">Виват</span>, трактиры, и бордели,
+<span class="term" onclick="loadComm('vocab_pozhivka_dobycha')">Поживка</span> будет ещё вам,
 И кабаки не опустели,
 Когда приехал Сашка к нам.
 В веселье буйственном с друзьями
-Ещё <span class="term" onclick="loadComm('drinks_punch')">за пуншем</span> он сидел,
+Еще за <span class="term" onclick="loadComm('cross_punsh_ending')">пуншем</span> он сидел,
 А разноцветными огнями
-Кой-где Кремлевский сад горел…
+Кой-где <span class="term" onclick="loadComm('geo_kremlevsky_sad_moscow')">Кремлевский сад</span> горел...
       </div>
 
+      <!-- Эпилог -->
       <h2 class="canto-title">Эпилог</h2>
 
       <div class="stanza">
 Друзья, вот несколько деяний
-Из жизни Сашки моего…
-Быть может, град ругательств, брани,
-Как дождь, посыплет на него.
-И на меня, как корифея
-Его распутства и бесчинств,
-Нагрянет, злобой пламенея,
-Какой-нибудь <span class="term" onclick="loadComm('comm_seminarist')">семинарист</span>…
-Но я их столько презираю,
-Что даже слушать не хочу,
-И что про Сашку вновь узнаю —
-<span class="teen-val">Ей-ей ни в чём не умолчу.</span><span class="adult-val">Ей-богу, всё вам расскажу.</span>
+Из жизни Сашки моего...
+Быть может, дождь ругательств, брани,
+Как град, посыплет на него,
+И на меня, <span class="term" onclick="loadComm('poetics_korifey_pokhabstva')">как корифея
+Его похабства и бесчинств</span>,
+<span class="term" onclick="loadComm('estate_seminarist_moralist')">Нагрянет, злобой пламенея,
+Какой-нибудь семинарист...</span>
+Но я врагов сих презираю,
+В дела их вовсе не вхожу
+И, что про Сашку ни узнаю,
+Ей-богу, всё вам расскажу.
       </div>
     </main>
 
@@ -1050,25 +1283,29 @@
   <script>
     const DB = {
 
+      /* =========================================================
+         ГЛАВА ПЕРВАЯ (строфа за строфой из файла Модуль.md)
+         ========================================================= */
+
       // Строфа 1
-      onegin_uncle: {
+      parody_onegin_intro: {
         tag: "Отсылки и пародии",
-        title: "Пародия на экспозицию «Евгения Онегина»",
-        html: `<p>А. И. Полежаев пишет «Сашку» после выхода первой главы «Евгения Онегина» А. С. Пушкина в 1825 г. Данная строка задает реминисцентный характер произведения: «Мой дядя самых честных правил...» Последующие похождения главного героя поэт описывает с опорой на композицию и сюжет пушкинского текста.</p>`
+        title: "Экспозиция поэмы и пушкинский зачин",
+        html: `<p>Автор отсылает к «Евгению Онегину» А. С. Пушкина. Строка задает пародийный характер произведения: «Мой дядя самых честных правил…» (1 глава, I строфа). Последующие похождения главного героя поэт описывает с опорой на композицию и сюжет пушкинского текста.</p>`
       },
-      struysky_uncle: {
+      bio_struysky_uncle: {
         tag: "Полежаев и его биография",
         title: "Александр Николаевич Струйский",
-        html: `<p>В описании дяди главного героя угадываются автобиографические черты Александра Николаевича Струйского (1782–1834) — дяди А. И. Полежаева со стороны отца, Леонтия Николаевича. Был благодетелем для Полежаева, во время студенчества поэта поддерживал материально.</p>`
+        html: `<p>В описании дяди главного героя угадываются автобиографические черты Александра Николаевича Струйского (1782–1834) — дяди А. И. Полежаева со стороны отца, Леонтия Николаевича. Во время студенчества поэта поддерживал его материально.</p>`
       },
-      struysky_campaigns: {
-        tag: "Быт и реалии эпохи",
-        title: "Военная служба А. Н. Струйского",
-        html: `<p>А. Н. Струйский участвовал в Отечественной войне 1812 г. и Заграничных походах 1813–1814 г.г.</p>`
+      history_struysky_campaigns: {
+        tag: "Полежаев и его биография",
+        title: "Военная служба дяди",
+        html: `<p>А. Н. Струйский участвовал в Отечественной войне 1812 г. и Заграничных походах 1813–1814 гг.</p>`
       },
 
       // Строфа 2
-      struyskaya_wife: {
+      bio_struyskaya_wife: {
         tag: "Полежаев и его биография",
         title: "Авдотья Николаевна Струйская",
         html: `<p>Авдотья Николаевна (урожденная Чирикова) являлась женой А. Н. Струйского с 1818 г.</p>`
@@ -1076,141 +1313,180 @@
       phrase_lyasy: {
         tag: "Язык и фразеология XIX века",
         title: "Точить лясы",
-        html: `<p>Точить лясы (фраз.) — говорить, болтать пустяки, вздор. Слово связано с «лясы/балясы»; в народном употреблении шутки, потешные россказни и остроты.</p>`
+        html: `<p>Точить лясы (фраз.) — говорить, болтать пустяки, вздор. Слово связано с «лясы/балясы»; в народном употреблении — шутки, потешные россказни и остроты.</p>`
       },
-      onegin_chort: {
+      vocab_grimaces: {
+        tag: "Язык и фразеология XIX века",
+        title: "Строить гримасы",
+        html: `<p>Намеренное искажение лица, ужимка (от французского <em>grimace</em>).</p>`
+      },
+      parody_onegin_chort: {
         tag: "Отсылки и пародии",
-        title: "Перифраз пушкинской строки",
-        html: `<p>Перифраз «Когда же черт возьмет тебя?» из текста А. С. Пушкина «Евгений Онегин». Строка также связана с темой поездки к дяде.</p>`
+        title: "Перифраз проклятия Онегина",
+        html: `<p>Перифраз «Когда же черт возьмет тебя?» (1 глава, I строфа) из «Евгения Онегина». В обоих текстах высказывание адресовано дяде.</p>`
       },
-      geo_escape_piter: {
-        tag: "Полежаев и его биография",
-        title: "Маршрут в Петербург",
-        html: `<p>В пушкинском тексте Евгений Онегин, наоборот, едет из Петербурга. Изменение локации связывают с автобиографическими причинами: будучи студентом, А. И. Полежаев неоднократно гостил у своего дяди А. Н. Струйского, который жил в Санкт-Петербурге.</p>`
+      geo_piter_escape: {
+        tag: "Карта событий",
+        title: "Поездка в Петербург",
+        html: `<p>В пушкинском тексте Евгений Онегин, наоборот, едет из Петербурга. Изменение в локации связывают с автобиографическими причинами: будучи студентом, А. И. Полежаев неоднократно гостил у своего дяди А. Н. Струйского, который жил в Санкт-Петербурге.</p>`
       },
 
       // Строфа 3
-      author_friend_model: {
+      parody_author_friend: {
         tag: "Отсылки и пародии",
-        title: "Автор как друг героя",
+        title: "Модель рассказчика",
         html: `<p>А. И. Полежаев сохраняет пушкинскую модель автора-собеседника, автора — друга главного героя.</p>`
       },
-      bio_polezhaev_name: {
-        tag: "Полежаев и его биография",
-        title: "Фамилия Полежаев",
-        html: `<p>Указывает на автобиографичность.</p>`
-      },
-      geo_pokryshkino: {
+      geo_pokryshkino_birth: {
         tag: "Карта событий",
         title: "Саранск и село Покрышкино",
-        html: `<p>А. И. Полежаев родился в Пензенской губернии, в селе Покрышкино, где находилось одно из поместий семьи Струйских, что указывает на автобиографичность. Кроме того, происходит снижение образа главного героя в сравнении с Онегиным, рожденным «на брегах Невы».</p>`
+        html: `<p>А. И. Полежаев родился в Пензенской губернии, в селе Покрышкино, где находилось одно из поместий семьи Струйских. Кроме того, усиливается контраст между образом Сашки и Евгением Онегиным, который был рожден «на брегах Невы» (1 глава, II строфа).</p>`
       },
 
       // Строфа 4
-      vocab_torovaty: {
+      vocab_torovato: {
         tag: "Язык и фразеология XIX века",
-        title: "Тороватый",
-        html: `<p>Тороватый (устар. и прост.) — щедрый.</p>`
+        title: "Торовато",
+        html: `<p>Тороватый (<em>устар.</em> и <em>прост.</em>) — щедрый.</p>`
       },
-      onegin_father_debt: {
+      parody_onegin_promotatsya: {
         tag: "Отсылки и пародии",
         title: "Разорение отца",
-        html: `<p>В «Евгении Онегине»: «Долгами жил его отец, / Давал три бала ежегодно/ И промотался наконец».</p>`
+        html: `<p>В «Евгении Онегине»: «Долгами жил его отец, / Давал три бала ежегодно / И промотался наконец» (1 глава, III строфа).</p>`
       },
-      derzhavin_izmail: {
+      parody_derzhavin_izmail: {
         tag: "Отсылки и пародии",
-        title: "Реминисценция из Державина",
-        html: `<p>Измененный фрагмент оды Г. Р. Державина «На взятие Измаила»: «Как с гор весной в долину воды,/ Низвержась, пенятся, ревут...»</p>`
+        title: "Державинская ода",
+        html: `<p>Измененный фрагмент оды Г. Р. Державина «На взятие Измаила»: «Как воды, с гор весной в долину / Низвержась, пенятся, ревут...».</p>`
       },
 
       // Строфа 5
-      onegin_tutor_lackey: {
-        tag: "Быт и реалии эпохи",
-        title: "Лакей-воспитатель",
-        html: `<p>Здесь простонародные бытовые условия воспитания Сашки контрастируют с характерным для светского общества аристократическим образованием Евгения Онегина: «Сперва Madame за ним ходила, / Потом Monsieur ее сменил».</p>`
+      mores_lackey_tutor: {
+        tag: "Отсылки и пародии",
+        title: "Воспитатель-лакей",
+        html: `<p>Здесь простонародные бытовые условия воспитания Сашки контрастируют с характерным для светского общества аристократическим образованием Евгения Онегина: «Сперва <em>Madame</em> за ним ходила, / Потом <em>Monsieur</em> ее сменил».</p>`
       },
       myth_mentor: {
-        tag: "Отсылки и пародии",
+        tag: "Мифы и философия",
         title: "Ментор",
-        html: `<p>Учитель, наставник (устар.). Слово произошло от др.-греч. Μέντωρ — имя воспитателя Телемаха из поэмы Гомера «Одиссея». Здесь носит иронический характер.</p>`
+        html: `<p>Учитель, наставник (<em>устар.</em>). Слово произошло от др.-греч. Μέντωρ — имя воспитателя Телемаха из поэмы Гомера «Одиссея». Здесь носит иронический характер.</p>`
       },
       myth_solomon: {
-        tag: "Отсылки и пародии",
+        tag: "Мифы и философия",
         title: "Соломон",
         html: `<p>Третий израильский царь, персонаж Ветхого Завета. Имя стало нарицательным со значением «мудрый, проницательный человек». Здесь носит иронический характер.</p>`
       },
-      french_curses: {
+      vocab_french_curses: {
         tag: "Язык и фразеология XIX века",
         title: "Французская брань",
-        html: `<p>Олух, подлец, дурак (фр.).</p>`
+        html: `<p>Олух, подлец, дурак (фр. <em>Jean-foutre, un vil, un con</em>).</p>`
       },
-      song_barynya: {
+      folklore_barynya: {
         tag: "Быт и реалии эпохи",
         title: "Песня «Барыня»",
-        html: `<p>Простонародная любовная песня «Барыня, барыня, сударыня барыня...» грубого манера (текст см: «Новый всеобщий и полный песенник». Спб., 1819. Ч 2. № 118).</p>`
+        html: `<p>Простонародная любовная песня «Барыня, барыня, сударыня барыня...» грубого манера (текст см.: «Новый всеобщий и полный песенник». Спб., 1819. Ч. 2. № 118).</p>`
       },
       vocab_pokhabstva: {
         tag: "Язык и фразеология XIX века",
         title: "Похабства",
         html: `<p>Бесстыдство в словах или поступках, сквернословие (простореч., вульг.).</p>`
       },
-      game_babki: {
+      games_babki: {
         tag: "Быт и реалии эпохи",
         title: "Игра в бабки",
-        html: `<p>Имеется в виду народная русская игра, состоящая в метании бабок. Бабки — надкопытные кости домашних животных (ср.: кости, костыги).</p>`
+        html: `<p>Имеется в виду народная русская игра, состоящая в метании бабок. Бабки — надкопытные кости домашних животных (ср.: кости, костыги — синонимы).</p>`
       },
-      game_svayka: {
+      games_svayka: {
         tag: "Быт и реалии эпохи",
         title: "Игра в свайку",
         html: `<p>Народная русская игра, состоящая в метании большого толстого гвоздя в лежащее на земле кольцо, а также гвоздь для этой игры.</p>`
       },
 
       // Строфа 6
-      pension_vizard: {
-        tag: "Быт и реалии эпохи",
+      pension_vizard_boarding: {
+        tag: "Полежаев и его биография",
         title: "Модный пансион и пансион Визара",
-        html: `<p>Учебные заведения «особого типа» в системе народного просвещения России. Расцвет пансионов пришёлся на 1810–1820-е годы, когда они стали альтернативой университетам и пользовались поддержкой правительства. Важнейшей задачей пансионов было воспитание будущих государственных чиновников. Существовали и частные пансионы, которые были более востребованы среди дворян (отсюда характеристика «модный»). Их преимуществом перед государственными образовательными учреждениями оставалось обучение иностранным языкам и возможность за короткое время приобрести необходимый минимум знаний по различным предметам, что в дальнейшем позволяло достичь определенного положения на службе. Министр народного просвещения А. К. Разумовский в докладной записке императору Александру I от 24 мая 1811 года критиковал частные пансионы за то, что они содержатся иностранцами, не обладающими достаточными знаниями. Здесь, скорее всего, имеется в виду московский пансион швейцарца Визара, куда в десятилетнем возрасте был отдан поэт А. И. Полежаев.</p>`
+        html: `<p>Учебные заведения «особого типа» в системе народного просвещения России. Важнейшей задачей пансионов было воспитание будущих государственных чиновников. Существовали и частные пансионы, которые часто содержались иностранцами и были более востребованы среди дворян (отсюда характеристика «модный»). Здесь, скорее всего, при учете автобиографичности произведения имеется в виду московский пансион швейцарца Визара, куда в десятилетнем возрасте был отдан сам поэт А. И. Полежаев.</p>`
       },
 
       // Строфа 7
-      coin_altyn: {
+      coins_altyn: {
         tag: "Быт и реалии эпохи",
         title: "Алтын",
         html: `<p>Бывшая серебряная монета в 6 денег или в 3 копейки.</p>`
       },
-      euro_universities: {
+      edu_european_universities: {
         tag: "Быт и реалии эпохи",
         title: "Европейские университеты",
         html: `<p>Старейшие университетские города в Германии, Литве и Англии. В них находились и до сих пор находятся крупные научные центры Европы.</p>`
       },
-      patents_privilege: {
+      estate_brat_patenty: {
         tag: "Быт и реалии эпохи",
-        title: "«Дурак, алтынник или скот»",
-        html: `<p>В начале XIX века в России официально использовали термин «привилегия» (напр., «Манифест о привилегиях на разные изобретения и открытия в ремеслах и художествах» Александра I 1812-го г.). Лексический ряд «дурак, алтынник, скот» создает обобщенный образ: «дурак» прямо указывает на отсутствие ума, «алтынник» (от «алтын» — мелкая монета) отсылает к мелочности и низкому социальному весу, а «скот» — обозначение грубости и отсутствия культуры.</p>`
+        title: "Брать патенты",
+        html: `<p>Получать права, свидетельства о квалификации или привилегии.</p>`
       },
-      estate_zvonar: {
+      vocab_durak_altynnik_skot: {
+        tag: "Язык и фразеология XIX века",
+        title: "«Дурак, алтынник или скот»",
+        html: `<p>Лексический ряд «дурак, алтынник, скот» создает обобщенный образ: «дурак» прямо указывает на отсутствие ума, «алтынник» — скупой человек, а «скот» — обозначение грубости и отсутствия культуры.</p>`
+      },
+      estate_zvonar_kolokolny: {
         tag: "Быт и реалии эпохи",
-        title: "Колокольный звонарь в университете",
+        title: "Колокольный звонарь",
         html: `<p>Звонарь — человек, звонящий в церковные колокола. Автор подчеркивает сословные ограничения в доступе к образованию: человек простого происхождения не может посещать университетские лекции наравне с представителями привилегированных сословий.</p>`
       },
-      costume_shpora_shlyapa: {
+      costume_treugolnaya_shlyapa: {
         tag: "Быт и реалии эпохи",
         title: "Треугольная шляпа и шпага",
         html: `<p>Треугольная шляпа и шпага — элементы костюма дворян и офицеров XVIII — начала XIX века. Детали костюма становятся средством изображения сословного неравенства и ограниченности доступа к образованию.</p>`
       },
 
       // Строфа 8
-      phrase_three_versts: {
+      phrase_poklony_tri_versty: {
         tag: "Язык и фразеология XIX века",
         title: "Поклоны в трех верстах",
-        html: `<p>Верста — русская мера длины, равная 500 саженям (около 1,067 км). Выражение «поклоны в трех верстах» представляет собой гиперболу, подчеркивающую преувеличенное, раболепное почтение к представителям высших сословий.</p>`
+        html: `<p>Верста — русская мера длины, равная 500 саженям (около 1,067 км). Послов и других высокопоставленных лиц по традиции могли торжественно встречать за несколько верст от города. Выражение «поклоны в трех верстах» представляет собой гиперболу, подчеркивающую преувеличенное, раболепное почтение к представителям высших сословий.</p>`
+      },
+      mores_privetstviya_v_senyakh: {
+        tag: "Быт и реалии эпохи",
+        title: "Приветствия в сенях",
+        html: `<p>Сени — прихожая господского дома, где обычно находились слуги и ожидали просители. Здесь высмеивается признание не за таланты и заслуги, а за угодничество и низкопоклонство.</p>`
+      },
+
+      // Строфа 9
+      mores_nelzya_li_kak_nibud: {
+        tag: "Быт и реалии эпохи",
+        title: "«Нельзя ли как-нибудь!»",
+        html: `<p>Намёк на взяточничество и кумовство в университетской среде.</p>`
+      },
+      satire_kozlinye_brady: {
+        tag: "Язык и фразеология XIX века",
+        title: "Козлиные брады",
+        html: `<p>Острый антиклерикальный выпад в сторону духовенства.</p>`
+      },
+
+      // Строфа 10
+      costume_vitsmundir: {
+        tag: "Быт и реалии эпохи",
+        title: "Вицмундир",
+        html: `<p>Форменный мундир гражданского чиновника в Российской империи. Его упоминание указывает на принадлежность персонажа к чиновничьему сословию.</p>`
+      },
+      parody_heroicomic_traktir: {
+        tag: "Отсылки и пародии",
+        title: "Традиция ирои-комической поэмы и Вакх",
+        html: `<p>В последующем описании времяпрепровождения Сашки обнаруживается опыт жанра ирои-комической поэмы, в основе которой лежит несоответствие торжественного слога и изображаемых грубо-бытовых событий или, наоборот, контраст грубого языка и возвышенной тематики, что создает комический эффект. В ирои-комической поэме В. И. Майкова «Елисей, или раздраженный Вакх» второй половины XVIII в. присутствует образ Вакха и рассказывается о любовно-пьяных похождениях главного героя, что, вероятно, указывает на некоторую преемственность.</p>`
       },
 
       // Строфа 11
-      romance_black_shawl: {
-        tag: "Быт и реалии эпохи",
-        title: "Романс «Черная шаль»",
-        html: `<p>«Черная шаль» — стихотворение А. С. Пушкина, написанное в 1820 году и опубликованное в 1821 году под подзаголовком «Молдавская песня». Одним из известных музыкальных воплощений стала композиция А. Н. Верстовского (1823). Упоминание «Черной шали» в «Сашке» отражает распространение пушкинского произведения в литературной и музыкальной культуре 1820-х годов.</p>`
+      romance_chernaya_shal: {
+        tag: "Отсылки и пародии",
+        title: "Пушкинский романс «Черная шаль»",
+        html: `<p>«Черная шаль» — стихотворение А. С. Пушкина, написанное в 1820 году и опубликованное в 1821 году под подзаголовком «Молдавская песня». Одним из известных музыкальных воплощений стала композиция А. Н. Верстовского (1823–1824). Упоминание «Черной шали» в «Сашке» отражает распространение пушкинского произведения в литературной и музыкальной культуре 1820-х годов.</p>`
+      },
+      vocab_persi: {
+        tag: "Язык и фразеология XIX века",
+        title: "Перси",
+        html: `<p>Перси (<em>устар., поэтич.</em>) — женская грудь.</p>`
       },
 
       // Строфа 12
@@ -1219,7 +1495,7 @@
         title: "Эпикур",
         html: `<p>Эпикуреец, любитель чувственных наслаждений, живущий ради удовольствий.</p>`
       },
-      myth_paphos_queen: {
+      myth_tsaritsa_paphosa: {
         tag: "Мифы и философия",
         title: "Царица Пафоса",
         html: `<p>Афродита, богиня красоты и любви в греческой мифологии; названа так по г. Пафосу на острове Кипр, где был ее храм и где она особенно почиталась.</p>`
@@ -1229,227 +1505,396 @@
         title: "Амур",
         html: `<p>Божество любви и влечения в античной мифологии.</p>`
       },
+      vocab_veshniy_tsvet: {
+        tag: "Язык и фразеология XIX века",
+        title: "Вешний цвет",
+        html: `<p>Вешний (<em>традиционно-поэтич.</em>) — весенний.</p>`
+      },
 
       // Строфа 13
-      name_anyuta: {
-        tag: "Язык и фразеология XIX века",
-        title: "Анюта",
-        html: `<p>Тип: какое-то устойчивое имя русской песенной культуры и вообще имя характерное для крестьянской среды (у Радищева, напр.). Обобщенный образ + сниженный тон пушкинского текста и разговорная интонация (Сашка, Анюта...).</p>`
+      parody_psalom_blazhen: {
+        tag: "Отсылки и пародии",
+        title: "Псалмическая формула",
+        html: `<p>Повтор «Блажен» отсылает к библейской формуле, в частности к началу первого псалма Псалтири: «Блажен муж, который не ходит на совет нечестивых…». Однако у Полежаева повтор приобретает пародийный, кощунственно-гуляцкий характер.</p>`
       },
-      philosophy_heraclit: {
+      philosophy_geraklit_plaksivy: {
         tag: "Мифы и философия",
         title: "Гераклит плаксивый",
-        html: `<p>Гераклит Эфесский (ок. 530–470 до н. э.) — древнегреческий философ; еще в античной традиции воспринимался как «вечно плачущий» философ, с прискорбием и жалостью взирающий на человеческую жизнь.</p>`
+        html: `<p>Гераклит Эфесский (ок. 530—470 до н. э.) — древнегреческий философ; еще в античной традиции воспринимался как «вечно плачущий» философ, с прискорбием и жалостью взирающий на человеческую жизнь.</p>`
+      },
+      poetics_anacreontic_motifs: {
+        tag: "Отсылки и пародии",
+        title: "Мотивы анакреонтики",
+        html: `<p>Здесь появляются мотивы, характерные для анакреонтической поэзии. Анакреонтическая поэзия — вид лирической поэзии, который воспевает радость жизни и чувственные наслаждения; жанр получил название по имени древнегреческого лирика Анакреонта (VI–V вв. до н. э.). Характерно частое использование мифологической образности (Эрот, Афродита, Бахус и др.), темами становятся веселье, вино, любовь, а также краткость и ценность человеческого бытия.</p>`
+      },
+
+      // Строфа 14
+      philosophy_seneka: {
+        tag: "Мифы и философия",
+        title: "Сенека",
+        html: `<p>Сенека Луций Анней (ок. 4 до н. э. — 65 н. э.) — римский философ-стоик и государственный деятель, проповедовавший покорность судьбе. Воспитатель Нерона, принужденный им к самоубийству.</p>`
+      },
+      philosophy_platon_mudrets: {
+        tag: "Мифы и философия",
+        title: "Платон-мудрец",
+        html: `<p>Платон (ок. 427–347 до н. э.) — древнегреческий философ, ученик Сократа, основатель Академии.</p>`
       },
 
       // Строфа 16
-      onegin_french_verses: {
+      parody_onegin_rifmy_kropat: {
         tag: "Отсылки и пародии",
         title: "Пародия на дворянское образование Онегина",
-        html: `<p>«Он по-французски совершенно / Мог изъясняться и писал...» (А. С. Пушкин, «Евгений Онегин», глава I, строфа V). Полежаев пародийно переосмысляет описание образования Онегина. Слова «лепетать» и «кропать» придают характеристике Сашки ироническую, сниженную окраску.</p>`
-      },
-
-      // Строфа 17
-      phrase_umen_nauchen: {
-        tag: "Язык и фразеология XIX века",
-        title: "«Умен — не то, что научен»",
-        html: `<p>Умен — не то, что не учен.</p>`
+        html: `<p>«Он по-французски совершенно / Мог изъясняться и писал…» (А. С. Пушкин, «Евгений Онегин», глава I, строфа V). Полежаев пародийно переосмысляет описание образования Онегина. Слова «лепетать» и «кропать» придают характеристике Сашки ироническую, сниженную окраску.</p>`
       },
 
       // Строфа 18
-      variant_shelmy_moski: {
+      slang_mokhnatye_shelmy: {
         tag: "История цензуры",
-        title: "Разночтение: «моськам в хомутах»",
-        html: `<p>Моськам (в др. издании).</p>`
+        title: "Жаргон «мохнатые» и разночтение",
+        html: `<p>Из контекста произведения восстанавливается, что «мохнатыми» называются полицейские (будочники в зимней форме или караульные). Это жаргонное слово, видимо, было взято из студенческой среды или придумано Полежаевым. В других списках встречается вариант: <em>«моськам в хомутах»</em>.</p>`
       },
 
       // Строфа 19
-      cens_two_books: {
+      cens_dve_knigi_blyadi: {
         tag: "История цензуры",
-        title: "«Ни обе книги» / «Обе бляди»",
-        html: `<p>Ветхий и Новый завет. В оригинале "обе бляди".</p>`
+        title: "«Обе книги» / «Обе бляди»",
+        html: `<p>В цензурированных печатных версиях — <em>«Ни обе книги — ничего»</em> (имеются в виду Ветхий и Новый Завет). В оригинальном списке автора — <em>«Ни обе бляди — ничего»</em>.</p>`
       },
-      plato_socrates: {
+      philosophy_platon_sokrat_immortality: {
         tag: "Мифы и философия",
-        title: "Платон и Сократ",
-        html: `<p>Платон (ок. 427–347 до н. э.) — древнегреческий философ, ученик Сократа; Сократ (ок. 470–399 до н. э.) — древнегреческий философ, учение которого известно прежде всего по сочинениям его учеников. Оба рассуждали о душе и её бессмертии. Здесь их имена используются как символ авторитетной философской мудрости, которая, однако, не способна убедить Сашку.</p>`
+        title: "Платон и Сократ о бессмертии души",
+        html: `<p>Платон (ок. 427–347 до н. э.) и Сократ (ок. 470–399 до н. э.) рассуждали о душе и её бессмертии (в частности, в диалоге «Федон»). Здесь их имена используются как символ высшей философской мудрости, которая, однако, оставляет героя абсолютно равнодушным.</p>`
       },
-      phrase_arshin_god: {
+      phrase_svoim_arshinom_boga: {
         tag: "Язык и фразеология XIX века",
         title: "Мерить на свой аршин",
-        html: `<p>«Мерить на свой аршин» — фразеологизм со значением «судить о других по собственной мерке, исходя из своих представлений». Аршин — старинная русская мера длины (около 71 см). В сочетании с упоминанием Бога выражение приобретает иронический оттенок.</p>`
+        html: `<p>«Мерить на свой аршин» — фразеологизм со значением «судить о других по собственной мерке, исходя из личных представлений». Аршин — старинная русская мера длины (около 71 см). В сочетании с Богом выражение подчеркивает демонстративный бунт героя.</p>`
       },
 
       // Строфа 21
-      art_raphael: {
+      art_rafael_santi: {
         tag: "Отсылки и пародии",
         title: "Рафаэль Санти",
-        html: `<p>Рафаэль Санти (1483–1520) — итальянский художник эпохи Возрождения. Рассказчик иронически утверждает, что даже такой выдающийся мастер не смог бы изобразить Сашку лучше, чем он сам описал его словами.</p>`
+        html: `<p>Рафаэль Санти (1483–1520) — великий итальянский живописец эпохи Возрождения. Рассказчик иронически утверждает, что даже такой выдающийся мастер не смог бы изобразить Сашку лучше, чем он сам описал его словами.</p>`
       },
 
       // Строфа 22
-      vocab_petimetr: {
-        tag: "Язык и фразеология XIX века",
-        title: "Петиметры",
-        html: `<p>Петиметрские наряды (от фр. petit-maître "маленький господин") — свойственный петиметру, то есть щегольской, франтовской, легкомысленный и подражающий французской моде.</p>`
+      costume_petimetry_naryady: {
+        tag: "Быт и реалии эпохи",
+        title: "Петиметры и щегольские наряды",
+        html: `<p>Петиметрские наряды (от фр. <em>petit-maître</em> — «маленький господин», щеголь) — свойственные петиметру, то есть моднику, франту, слепо копирующему французские светские манеры.</p>`
       },
       vocab_bonton: {
         tag: "Язык и фразеология XIX века",
         title: "Бонтон",
-        html: `<p>Франц. bon ton «хороший тон» — принятые в светском обществе правила поведения и манеры. Сашка не склонен соблюдать светские условности.</p>`
+        html: `<p>Франц. <em>bon ton</em> — «хороший тон», принятые в дворянском свете правила приличия и манеры. Сашка с юности презирал светские условности.</p>`
       },
 
       // Строфа 23
-      myth_bacchus: {
+      myth_bakhus: {
         tag: "Мифы и философия",
         title: "Бахус",
-        html: `<p>Бог виноделия и веселья в античной мифологии.</p>`
+        html: `<p>Бог виноделия, виноградных лоз и буйного веселья в античной мифологии.</p>`
       },
       myth_momus: {
         tag: "Мифы и философия",
         title: "Момус",
-        html: `<p>Божество, олицетворяющее злословие и насмешку, в античной мифологии.</p>`
+        html: `<p>Божество насмешки, злословия и порицания в греческой мифологии.</p>`
       },
-      myth_diana_erotic: {
+      myth_sladostrastnaya_diana: {
         tag: "Мифы и философия",
         title: "Сладострастная Диана",
-        html: `<p>Древнеримская богиня охоты и целомудрия, соответствующая древнегреческой Артемиде. Эпитет «сладострастная» противоречит традиционному представлению о богине как о хранительнице целомудрия и создает комический эффект.</p>`
+        html: `<p>Древнеримская богиня охоты и девственности (соответствующая греческой Артемиде). Оксюморонный эпитет «сладострастная» контрастирует с каноном целомудренной богини и создает комический бурлескный эффект.</p>`
+      },
+      myth_vakkh: {
+        tag: "Мифы и философия",
+        title: "Вакх",
+        html: `<p>Римское имя греческого бога Диониса (то же, что Бахус).</p>`
       },
 
       // Строфа 24
-      drinks_noble_wines: {
+      drinks_don_reyn_yamay: {
         tag: "Быт и реалии эпохи",
-        title: "Дон, Рейн и Ямай",
-        html: `<p>Названия рек, метонимически обозначающие вина, производившиеся в соответствующих регионах. Ямай, вероятно, указывает на ром с Ямайки. Перечисление алкогольных напитков создает фон разгульных пирушек Сашки.</p>`
+        title: "Благородные вина (Дон, Рейн, Ямай)",
+        html: `<p>Названия рек и географических регионов, метонимически обозначающие дорогие напитки: цимлянское донское вино, рейнвейн и ямайский ром.</p>`
       },
-      drinks_sivolday: {
+      drinks_punsh_sivolday: {
         tag: "Быт и реалии эпохи",
-        title: "Сиволдай",
-        html: `<p>Сиволдай — устаревшее просторечное название сивухи, низкокачественного крепкого спиртного напитка. Пунш и сиволдай противопоставлены ранее упомянутым винам.</p>`
+        title: "Пунш и сиволдай",
+        html: `<p>Сиволдай — просторечное название сивухи, крепкого и дешевого неочищенного хлебного вина (водки). Вместе с согревающим пуншем они противопоставлены господским винам.</p>`
       },
 
       // Строфа 25
-      maykov_elisei_night: {
+      parody_maykov_zavesa_noshchi: {
         tag: "Отсылки и пародии",
-        title: "«Завеса темной ночи»",
-        html: `<p>Измененная цитата из ирои-комической поэмы В. И. Майкова "Елисей, или раздраженный Вакх" (1771 г.): “Уже явилася завеса темной ночи".</p>`
+        title: "«Завеса темной нощи»",
+        html: `<p>Измененная цитата из ирои-комической поэмы В. И. Майкова «Елисей, или раздраженный Вакх» (1771 г.): <em>«Уже явилася завеса темной ночи»</em>.</p>`
       },
-      drinks_erofa: {
+      geo_maryina_roshcha: {
+        tag: "Карта событий",
+        title: "Марьина роща",
+        html: `<p>Марьина роща — тогдашняя окраина Москвы за заставой возле старого кладбища; традиционное место простонародных майских гуляний с цыганскими хорами, балаганами и кабаками низшего разряда. М. Н. Загоскин писал: <em>«в этой Марьиной роще все кипит жизнию и все напоминает о смерти»</em>.</p>`
+      },
+      costume_ermolki: {
+        tag: "Быт и реалии эпохи",
+        title: "Ермолки",
+        html: `<p>Традиционные круглые шапочки. В студенческом и богемном обиходе 1820-х годов ермолка служила символом домашней раскованности и вольнодумства, а также встречалась у мелких ремесленников пригорода.</p>`
+      },
+      drinks_erofa_nastoyka: {
         tag: "Быт и реалии эпохи",
         title: "Ерофа (ерофеич)",
-        html: `<p>Горькая настойка, водка, настоянная на травах (ср: ерофей, ерофеич, ерошка.).</p>`
+        html: `<p>Ерофа (также «ерофеич», «ерофей») — старинная русская горькая водка, настоянная на сборе пахучих трав и пряностей (зверобой, мята, анис).</p>`
       },
       variant_ogarev_tabak: {
         tag: "История цензуры",
-        title: "Вариант строки по списку Огарева",
-        html: `<p>Табак, рыготина и водка (по Огареву).</p>`
+        title: "Вариант по списку Огарева",
+        html: `<p>В рукописном списке поэмы из архива Н. П. Огарева данная строка читается резче: <em>«Табак, рыготина и водка»</em>.</p>`
       },
 
       // Строфа 27
+      geo_sretenka_street: {
+        tag: "Карта событий",
+        title: "Сретенка",
+        html: `<p>Сретенская улица в Москве. В путеводителях XIX века описывалась как оживленный торговый, но грязный район, изобиловавший дешевыми питейными домами и тайными притонами.</p>`
+      },
       vocab_bandersha: {
-        tag: "Язык и фразеология XIX века",
+        tag: "Быт и реалии эпохи",
         title: "Бандерша",
-        html: `<p>Содержательница борделя.</p>`
+        html: `<p>Содержательница негласного публичного дома (борделя).</p>`
       },
 
       // Строфа 28
-      barkov_priap: {
+      parody_barkov_priap: {
         tag: "Отсылки и пародии",
         title: "«Ода Приапу» И. С. Баркова",
-        html: `<p>Угадывается след нецензурной «Оды Приапу» И. С. Баркова, автора так называемых «срамных» од в бурлеском стиле, где форма высокой классицистической оды сочеталась с низкой лексикой и фривольной тематикой. Приап — древнегреческое и римское божество плодородия, покровитель садов и виноградников. Его образ связан с античной приапической поэзией — стихотворениями эротического и непристойного содержания.</p>`
+        html: `<p>Прямая реминисценция из «срамных» од И. С. Баркова. Приап — античное божество плодородия, покровитель чувственных наслаждений и плотской страсти.</p>`
       },
-      vocab_abris: {
+      customs_vskuritsya_fukht: {
+        tag: "Быт и реалии эпохи",
+        title: "Фимиам и студенческий табак",
+        html: `<p>Ироническое уподобление табачного чада («дымить вакштафом/гишардом») воскурению священного фимиама на жертвеннике божества.</p>`
+      },
+      vocab_legkiy_abris: {
         tag: "Язык и фразеология XIX века",
         title: "Легкий абрис",
-        html: `<p>Очертание, контур предмета; в переносном значении — краткий набросок. Выражение «легкий абрис» означает здесь беглое, схематичное описание предстоящей сцены.</p>`
+        html: `<p>Абрис — контур, схематический очерк. В контексте строфы означает беглый, но откровенный набросок любовной сцены.</p>`
       },
 
       // Строфа 29
-      myth_calypso: {
+      myth_kalipso: {
         tag: "Мифы и философия",
-        title: "Нимфа Калипсо",
-        html: `<p>Вариант имени Калипсо, нимфы из «Одиссеи» Гомера, которая удерживала Одиссея на своем острове и добивалась его любви.</p>`
+        title: "Калипсо",
+        html: `<p>Имя нимфы с острова Огигия из гомеровской «Одиссеи», долгие годы удерживавшей героя силой любви. В контексте поэмы имя присвоено московской публичной девице.</p>`
       },
-      parody_istomina: {
+      parody_istomina_dance: {
         tag: "Отсылки и пародии",
-        title: "Пародия на танец балерины Истоминой",
-        html: `<p>Растянута, полувоздушна,<br>Калипсо юная лежить,<br>Е...е грозному послушна,<br>Она и млеет и дрожит.<br>Одна нога коснулась полу,<br>Другая, нежно на отлет,<br>Одна рука спустилась долу,<br>Другая, к персям друга жмет.<br>И вьется ж...ю атласной,<br>И изгибается кольцом,<br>И изнывает сладострастно<br>В томленьи пылком и живом.</p><p style="margin-top:8px;">Фрагмент представляет собой пародию на описание танца Истоминой в ХХ строфе первой главы «Евгения Онегина» («Блистательна, полувоздушна,/ Смычку волшебному послушна,/ Толпою нимф окружена, / Стоит Истомина; она,/ Одной ногой касаясь пола,/ Другою медленно кружит,/ И вдруг прыжок, и вдруг летит,/ Летит, как пух от уст Эола;/ То стан совьет, то разовьет/ И быстрой ножкой ножку бьет»).</p>`
+        title: "Пародия на танец Истоминой",
+        html: `<p>Пародийный бурлескный пересказ строфы XX из 1-й главы «Евгения Онегина» Пушкина («Блистательна, полувоздушна, / Смычку волшебному послушна, / Толпою нимф окружена, / Стоит Истомина; она, / Одной ногой касаясь пола...»). Полежаев переносит балетную пластику знаменитой балерины в декорации постельной сцены в притоне.</p>`
       },
 
       // Строфа 30
-      dance_contredanse: {
+      vocab_abris_repetition: {
+        tag: "Отсылки и пародии",
+        title: "Отказ от описания картины",
+        html: `<p>Иронический риторический прием: автор заявляет о невозможности передать подлинное буйство красок словами, отсылая к личному чувственному опыту читателя.</p>`
+      },
+      dance_kontredans: {
         tag: "Быт и реалии эпохи",
         title: "Контроданс",
-        html: `<p>Франц. contredanse, англ. country dance — «деревенский танец» старинный английский танец, получивший распространение в Европе в XVIII–XIX веках и исполнявшийся в том числе на балах.</p>`
+        html: `<p>Франц. <em>contredanse</em> (от англ. <em>country dance</em>) — популярный в XVIII–XIX веках групповой танец с быстрыми фигурами визави.</p>`
       },
-      measure_polshtof: {
+      variant_sochinilsya_tants: {
+        tag: "История цензуры",
+        title: "Разночтение в названии танца",
+        html: `<p>В ряде списков первой половины XIX века вместо слова «танц» на полях отмечено чтение «вальс».</p>`
+      },
+      measures_polshtofy: {
         tag: "Быт и реалии эпохи",
-        title: "Полштоф",
-        html: `<p>Сосуд для хранения алкогольных напитков, штоф — ёмкость, равная 1/10 ведра.</p>`
+        title: "Полштофы",
+        html: `<p>Полштоф — бутыль емкостью в 1/20 ведра (около 0,6 литра).</p>`
+      },
+      police_kolokolchik_nesonlivy: {
+        tag: "Быт и реалии эпохи",
+        title: "Будочный колокольчик",
+        html: `<p>Тревожный колокольчик, крепившийся к будке будочника (служителя полицейского порядка). Служил для созыва караульных при уличных потасовках и пожарах.</p>`
+      },
+      mores_zautreni_nabat: {
+        tag: "Быт и реалии эпохи",
+        title: "Набат к заутрене",
+        html: `<p>Ранний колокольный звон, созывающий верующих к церковной заутрене, парадоксально сливается с набатом ночного бедствия и знаменует финал бурной пьяной ночи студентов.</p>`
       },
 
       // Строфа 31
-      vocab_erygi: {
+      vocab_erygi_police: {
         tag: "Язык и фразеология XIX века",
         title: "Ерыги",
-        html: `<p>Устаревшее название низшего полицейского чина; в переносном смысле — беспутный человек, пьяница, развратный гуляка.</p>`
+        html: `<p>Ерыги — старинное презрительное обозначение низших полицейских чинов и ярыжек; в переносном смысле — беспутные гуляки, бродяги и кабачные завсегдатаи.</p>`
       },
-      cens_ogarev_posteli: {
+      police_mokhnatykh_polchishcha: {
+        tag: "Быт и реалии эпохи",
+        title: "Облавы на нелегальные притоны",
+        html: `<p>В 1820-е годы публичные дома и проституция в Российской империи находились под строгим уголовным запретом (до официальной регламентации 1843 года). Ночные полицейские облавы на притоны были рядовым явлением.</p>`
+      },
+      variant_posteli_ogarev: {
         tag: "История цензуры",
-        title: "Разночтение: восстановление по списку Огарева",
-        html: `<p>восст. по Н. Огареву</p>`
+        title: "Восстановление по списку Огарева",
+        html: `<p>Слово «мягкие» восстановлено по рукописному списку из собрания Н. П. Огарева (в других цензурированных списках строка читалась с многоточием: <em>«Покинув ...... постели»</em>).</p>`
+      },
+
+      // Строфа 33
+      person_somov_nezabvenny: {
+        tag: "Полежаев и его биография",
+        title: "Сомов незабвенный",
+        html: `<p>Один из реальных товарищей Полежаева по Московскому университету, участник студенческих сходок и знаменитой ночной потасовки у комитета.</p>`
+      },
+
+      // Строфа 34
+      police_bufeli_dozor: {
+        tag: "Быт и реалии эпохи",
+        title: "Свирепые буфели",
+        html: `<p>«Буфели» — презрительная студенческая кличка будочников (городских стражей порядка низшего чина, стоявших у караульных будок с алебардами). В рукописи ГИМ зафиксирован параллельный вариант: <em>«Команды будочной дозор»</em>.</p>`
+      },
+
+      // Строфа 35
+      costume_kapoty: {
+        tag: "Быт и реалии эпохи",
+        title: "Капоты",
+        html: `<p>Широкая верхняя распашная студенческая одежда вроде шинели или просторного пальто из сукна.</p>`
+      },
+      vocab_mon_cher: {
+        tag: "Язык и фразеология XIX века",
+        title: "Mon cher",
+        html: `<p>«Мой дорогой!» (фр. <em>mon cher</em>) — распространенное светское и дружеское обращение.</p>`
+      },
+      punishment_rogatka: {
+        tag: "Быт и реалии эпохи",
+        title: "Рогатка",
+        html: `<p>Тяжелый железный ошейник с длинными торчащими наружу зубьями-спицами, применявшийся в России до 1828 г. для содержания под стражей буйных арестантов и не позволявший им лечь.</p>`
+      },
+
+      // Строфа 37
+      vocab_donnez_nous_jean: {
+        tag: "Язык и фразеология XIX века",
+        title: "Donnez-nous, Jean, un peu...",
+        html: `<p>«Дай нам, Жан, немного...» (фр. <em>Donnez-nous, Jean, un peu</em>) — возглас, адресованный товарищу за столом.</p>`
+      },
+      customs_gishard_tobacco: {
+        tag: "Быт и реалии эпохи",
+        title: "Гишард",
+        html: `<p>Популярная в студенческой среде 1820-х годов марка крепкого курительного табака иностранного производства.</p>`
+      },
+      genre_druzheskoe_poslanie: {
+        tag: "Отсылки и пародии",
+        title: "Традиция дружеского послания",
+        html: `<p>Финал строфы выдержан в традициях карамзинистского и арзамасского дружеского послания: поименная перекличка реальных университетских друзей поэта (Надеждин, Коврайский, Жданов, Кушенский), каждому из которых отведена своя комическая роль в пирушке.</p>`
+      },
+
+      // Строфа 38
+      vocab_vivat: {
+        tag: "Язык и фразеология XIX века",
+        title: "Виват",
+        html: `<p>Виват (от лат. <em>vivat</em> — «да здравствует!») — традиционный восторженный застольный тост и клич одобрения.</p>`
       },
 
       // Глава вторая
-      vocab_zabytyo: {
+      // Строфа 1
+      vocab_zabytyi: {
         tag: "Язык и фразеология XIX века",
         title: "Забытьё",
         html: `<p>Забытьё (в форме забытьи) — состояние полусна или усталости</p>`
       },
-      customs_zastava: {
-        tag: "Быт и реалии эпохи",
-        title: "Московская застава",
-        html: `<p>Застава (в данном случае Московская застава на въезде в Санкт-Петербург) — пункт въезда в город с контрольно-пропускным постом. На заставе у въезжающих проверяли подорожные (документы-пропуска, которые использовались для путешествий на лошадях), паспорта и регистрировали прибывших.</p>`
+      cross_sivolday: {
+        tag: "Перекрестная ссылка",
+        title: "Сиволдай",
+        html: `<p><!-- ШАБЛОН: вставить перекрестную ссылку на комментарий в первой части (напр. drinks_sivolday) --></p>`
       },
-      geo_monument_peter: {
-        tag: "Карта событий",
-        title: "«Медный всадник»",
-        html: `<p>Памятник Петру I («Медный всадник» работы Э. Фальконе на Сенатской площади).</p>`
+      customs_moskovskaya_zastava: {
+        tag: "Быт и реалии эпохи",
+        title: "Застава",
+        html: `<p>Застава (в данном случае Московская застава на въезде в Санкт-Петербург) — пункт въезда в город с контрольно-пропускным постом. На заставе у въезжающих проверяли подорожные (документы-пропуска, которые использовались для путешествий на лошадях), паспорта и регистрировали прибывших</p>`
+      },
+
+      // Строфа 2
+      geo_medny_vsadnik: {
+        tag: "Быт и реалии эпохи",
+        title: "Изображение Петра",
+        html: `<p>Речь идёт о известном памятнике Петру І «Медный всадник» работы Э. Фальконе на Сенатской площади</p>
+               <figure class="comm-figure">
+           <img src="assets/medny_vsadnik.jpeg" alt="Памятник Петру I (Медный всадник)" class="comm-img" loading="lazy">
+         </figure>`
       },
       grammar_smykalisya: {
         tag: "Язык и фразеология XIX века",
         title: "Смыкалися",
-        html: `<p>«Смыкаться» то есть «соединяться», «закрываться». Главный герой поэмы устал, но не может уснуть из-за беспокойства. Автор использует более архаичную форму глагола «смыкалися» вместо «смыкались» придавая портрету главного героя более возвышенный характер</p>`
+        html: `<p>«Смыкаться» то есть «соединяться», «закрываться». Главный герой поэмы устал, но не может уснуть из-за беспокойства</p>
+               <p>Автор использует более архаичную форму глагола «смыкалися» вместо «смыкались», придавая портрету более возвышенный характер</p>`
       },
-      student_pipe_smoking: {
+      custom_pipe_smoking: {
         tag: "Быт и реалии эпохи",
         title: "Курение трубки",
-        html: `<p>В России 1820-х годов курение трубки было неотъемлемой частью студенческой идентичности, символом вольнодумства и товарищества.</p>`
+        html: `<p>В России 1820-х годов курение трубки было неотъемлемой частью студенческой идентичности, символом вольнодумства и товарищества</p>
+               <!-- * какая-нибудь картинка где студенты курят трубки?* -->`
       },
-      parody_medny_vsadnik: {
+      parody_onegin_granit: {
         tag: "Отсылки и пародии",
-        title: "Пушкинский Евгений у монумента",
-        html: `<p>Полежаев снова обращается к Пушкинскому тексту и перерабатывает его — здесь мы видим отсылку к портрету главного героя поэмы «Медный Всадник»: «И опершися на гранит, / Стоял задумчиво Евгений»</p>`
+        title: "Реминисценция из «Евгения Онегина»",
+        html: `<p>Полежаев снова обращается к пушкинскому тексту и перерабатывает его — здесь мы видим отсылку к портрету главного героя «Евгения Онегина» (1 глава, XLVIII строфа):<br>
+            <br>
+            «И опершися на гранит,<br>
+            Стоял задумчиво Евгений»</p>`
       },
-      drinks_punch: {
-        tag: "Быт и реалии эпохи",
+
+      // Строфа 3
+      cens_stanza_beauty_lines: {
+        tag: "История цензуры",
+        title: "Цензурный пропуск",
+        html: `<p>В неподцензурной версии в этом фрагменте следует описание моментов телесной близости, по которым будет скучать главный герой</p>`
+      },
+
+      // Строфа 4
+      cross_punch_canto1: {
+        tag: "Перекрестная ссылка",
         title: "Пунш",
-        html: `<p>Традиционный согревающий алкогольный напиток из рома или коньяка, сахара, чая и пряностей, главный напиток студенческих вечеринок 1820-х гг.</p>`
+        html: `<p><!-- ШАБЛОН: перекрестная ссылка на коммент в 1 части --></p>`
+      },
+      cross_erofey_canto1: {
+        tag: "Перекрестная ссылка",
+        title: "Ерофей",
+        html: `<p><!-- ШАБЛОН: перекрестная ссылка на коммент в 1 части --></p>`
+      },
+      cens_brothel_feast: {
+        tag: "История цензуры",
+        title: "Цензурный пропуск",
+        html: `<p>В неподцензурном тексте следует слово, грубо называющее разгульных, неприличных женщин</p>`
+      },
+      vocab_osenyat: {
+        tag: "Язык и фразеология XIX века",
+        title: "Осенят",
+        html: `<p>Глагол «осенят» здесь употреблен в значении «покрыть», привести в спокойное и умиротворенное состояние</p>`
       },
       vocab_upoyenny: {
         tag: "Язык и фразеология XIX века",
         title: "Упоённый",
-        html: `<p>Слово упоённый (от упоить / упиваться) имеет двойную семантику: 1) Прямое значение: дурманящее опьянение от алкоголя. 2) Переносное значение: состояние полного погружения в глубокий и беззаботный сон.</p>`
+        html: `<p>Слово «упоённый» (от «упоить» / «упиваться») имеет двойное значение: 1) В прямом значении: дурманящее опьянение от алкоголя. 2) В переносном значении: состояние полного погружения в глубокий и беззаботный сон</p>`
       },
-      rhetoric_baba: {
-        tag: "Отсылки и пародии",
-        title: "Риторическое обращение к герою",
+
+      // Строфа 5
+      rhetoric_baba_reproach: {
+        tag: "Поэтика и стиль",
+        title: "Обращение повествователя",
         html: `<p>Повествователь обращается к главному герою с риторическими вопросами, говорит о том, что он ведёт себя не смело</p>`
       },
-      bio_rozgi: {
+      vocab_tuzhit: {
+        tag: "Язык и фразеология XIX века",
+        title: "Тужить",
+        html: `<p>Тужить — горевать, сильно огорчаться о чем-либо, испытывать душевную боль.</p>`
+      },
+      bio_rozgi_discipline: {
         tag: "Полежаев и его биография",
-        title: "Наказание розгами",
-        html: `<p>В XIX веке розги и шпицрутены были официальной частью дисциплинарной и карательной системы Российской империи. Эти строки звучат жутковатыми. В 1826 году за поэму «Сашка» Полежаев по личному приказу Николая I был разжалован в солдаты. В 1837 году за побег из полка он был приговорён к наказанию розгами, после чего у поэта развился туберкулёз, и в 1838 году он скончался. Для героя розги — символ детского страха и принуждения.</p>`
+        title: "Розги",
+        html: `<p>В ХІХ веке розги были официальной частью дисциплинарной и карательной системы Российской империи</p>
+               <p>Для героя розги символ детского страха и принуждения</p>
+               <p>В 1826 году за поэму «Сашка» Полежаев по личному приказу Николая I был разжалован в солдаты. В 1837 году за побег из полка он был приговорён к наказанию розгами, после чего у поэта развился туберкулёз, и в 1838 году он скончался</p>`
       },
       vocab_kurolesit: {
         tag: "Язык и фразеология XIX века",
@@ -1459,102 +1904,398 @@
       phrase_gol_kak_sokol: {
         tag: "Язык и фразеология XIX века",
         title: "Гол как сокол",
-        html: `<p>Гол как сокол — то есть страшно беден, ничего не имеет. Есть несколько версий происхождения оборота. По наиболее распространенной, сокол здесь (с ударением на последнем слоге) старинное стенобитное орудие из чугуна или железа в форме длинного и толстого бревна или бревно, окованное металлом. Его навешивали на железных цепях и, раскачивая, прошибали им самые прочные крепостные ворота и каменные стены. Поверхность сокола была гладкой, «голой».</p>`
+        html: `<p>Гол как сокол — то есть лишился денег, остался ни с чем</p>
+               <p>Есть несколько версий происхождения оборота. По наиболее распространенной, сокол здесь (с ударением на последнем слоге) старинное стенобитное орудие из чугуна или железа в форме длинного и толстого бревна или бревно, окованное металлом. Его навешивали на железных цепях и, раскачивая, прошибали им самые прочные крепостные ворота и каменные стены. Поверхность сокола была гладкой, «голой»</p>
+               <figure class="comm-figure">
+                  <img src="assets/sokol_orudie.jpeg" alt="Сокол (старинное орудие)" class="comm-img" loading="lazy">
+                  </figure>
+               <p><a href="https://gramota.ru/biblioteka/spravochniki/spravochnik-po-frazeologii/gol-kak-sokol" target="_blank" rel="noopener noreferrer">Справочник по фразеологии на Грамота.ру</a></p>`
       },
-      address_brat: {
+      phrase_nos_povesil: {
+        tag: "Язык и фразеология XIX века",
+        title: "Нос повесить",
+        html: `<p>Нос повесить — устойчивое русское фразеологическое выражение, означающее сильную степень расстройства и разочарования</p>`
+      },
+      address_brat_student: {
         tag: "Язык и фразеология XIX века",
         title: "Обращение «брат»",
-        html: `<p>Брат (как обращение) — характерный элемент разговорно-фамильярного стиля и студенческого братства XIX века.</p>`
+        html: `<p>Брат (как обращение) — характерный элемент для разговорно-фамильярного стиля и студенческого братства ХІХ века</p>`
       },
-      onegin_povesa: {
+
+      // Строфа 6
+      vocab_otshelkal: {
+        tag: "Язык и фразеология XIX века",
+        title: "Отщелкал",
+        html: `<p>Отщелкал — в данном случае употреблено в переносном значении: дядя не буквально даёт герою щелчки, а ругается на него, проявляет словесную агрессию</p>`
+      },
+
+      // Строфа 7
+      parody_onegin_povesa: {
         tag: "Отсылки и пародии",
-        title: "Молодой повеса",
-        html: `<p>Так думал молодой повеса, / Летя в пыли на почтовых, / Всевышней волею Зевеса / Наследник всех своих родных. "Евгений Онегин II строфа"</p>`
+        title: "Отсылка к «Евгению Онегину»",
+        html: `<p>В описании главного героя вновь читаются отсылки к «Евгению Онегину» (1 глава, ІІ строфа):</p>
+               <blockquote>«Так думал молодой повеса,<br>Летя в пыли на почтовых,<br>Всевышней волею Зевеса<br>Наследник всех своих родных»</blockquote>`
       },
-      coins_chervontsy: {
+
+      // Строфа 8
+      
+      costume_anglo_kurguzy: {
+      tag: "Быт и реалии эпохи",
+      title: "Англо-кургузый фрак",
+      html: `<p>Англо-кургузый — короткий спереди фрак на английский манер, очень популярный среди столичных модников 1820-х годов</p>
+            <figure class="comm-figure">
+            <img src="assets/tailcoat_1820s.webp" alt="Мужской фрак 1820-х годов" class="comm-img" loading="lazy">
+            <figcaption>Костюм начала 1820-х годов: короткий двубортный фрак, жилет и трость</figcaption>
+            </figure>`
+      },
+
+      cross_shlyapa_elastik: {
+        tag: "Перекрестная ссылка",
+        title: "Шляпа эластик",
+        html: `<p><!-- ШАБЛОН: перекрестная ссылка на коммент --></p>`
+      },
+      coins_chervontsy_gold: {
         tag: "Быт и реалии эпохи",
-        title: "Червонцы светлы",
-        html: `<p>В начале XIX века червонцами в России называли золотые монеты высокой пробы. Почему они «светлы»? Именно золото не окисляется и сохраняет яркий, чистый вид в отличие от тускнеющих медяков или ветхих бумажных ассигнаций.</p>`
+        title: "Червонцы светлы, драгоценны",
+        html: `<p>В начале ХІХ века червонцами в России называли золотые монеты высокой пробы. Этим монеты выделялись своим блеском — именно золото не окисляется и сохраняет яркий, чистый вид в отличие от тускнеющих медяков или ветхих бумажных ассигнаций.</p>`
       },
-      theater_first_row: {
+      theater_parter_kresla: {
         tag: "Быт и реалии эпохи",
-        title: "Первые ряды кресел в театре",
-        html: `<p>В театрах пушкинской эпохи партер разделялся: первые ряды кресел перед самой сценой были самыми дорогими и престижными. В 1820-е годы ходить в театр каждый вечер было не просто увлечением искусством, а главной обязанностью петербургского денди.</p>`
+        title: "Кресла в театре",
+        html: `<p>В театрах пушкинской эпохи партер разделялся: первые ряды кресел перед сценой были самыми дорогими и престижными. В 1820-е годы ежедневные посещения театра были не просто мотивированы любовью к искусству, но являлись частью обязательного досуга богатых и модных жителей столицы</p>`
       },
-      vocab_frant: {
+
+      // Строфа 9
+      vocab_frant_dandy: {
         tag: "Язык и фразеология XIX века",
         title: "Франт",
         html: `<p>Франт — человек, который одет красиво и изысканно, любит наряжаться</p>`
       },
-      accessory_khlystik: {
+      vocab_spesivy: {
+        tag: "Язык и фразеология XIX века",
+        title: "Спесивый",
+        html: `<p>Спесивый — надменный, высокомерный, выражающий пренебрежение к окружающим</p>`
+      },
+      accessory_khlystik_cane: {
         tag: "Быт и реалии эпохи",
         title: "Хлыстик",
-        html: `<p>«Хлыстик» в этом случае что-то наподобие твердой или упругой трости с рукоятью. Подобные трости часто использовались в верховой езде, но могли выступать и как элегантный аксессуар. Действия главного героя находятся в данном случае на грани неприличия</p>`
+        html: `<p>«Хлыстик» в этом случае что-то наподобие твердой или упругой трости с рукоятью. Подобные трости часто использовались в верховой езде, но могли выступать и как элегантный аксессуар. Действия главного героя находятся в данном случае откровенно неприличны</p>`
       },
-      carriage_ressory: {
+      cross_bonton_canto1: {
+        tag: "Перекрестная ссылка",
+        title: "Бонтон",
+        html: `<p><!-- ШАБЛОН: перекрестная ссылка на комментарий первой части (напр. vocab_bonton) --></p>`
+      },
+      carriage_ukharskie_ressory: {
         tag: "Быт и реалии эпохи",
         title: "Ухарские рессоры",
-        html: `<p>Ухарский (от «ухарство» удаль, лихость) щегольской, лихой, броский. Рессора (от французского ressort пружина) — это упругий элемент подвески транспортного средства. Рессоры в экипажах начала XIX века были показателем комфорта и роскоши. Наличие хороших рессор в карете позволяло мягко и быстро передвигаться по булыжным мостовым Петербурга, подчеркивая статус седока.</p>`
+        html: `<p>Ухарский (от «ухарство» — удаль, лихость) — щегольской, лихой, броский</p>
+               <p>Рессора (от французского ressort — пружина) — это упругий элемент подвески транспортного средства</p>
+               <p>Рессоры в экипажах начала ХІХ века были показателем комфорта и роскоши. Наличие хороших рессор в карете позволяло мягко и быстро передвигаться по булыжным мостовым Петербурга, подчеркивая статус пассажира</p>`
       },
-      theater_fora: {
+
+      // Строфа 10
+      parody_onegin_teatr_lozhi: {
+        tag: "Отсылки и пародии",
+        title: "Сравнение с Онегиным в театре",
+        html: `<p>Похожим образом ведет себя и пушкинский Евгений Онегин (1 глава, XXII строфа):</p>
+               <blockquote>«Все ярусы окинул взором,<br>Всё видел: лицами, убором<br>Ужасно недоволен он;<br>С мужчинами со всех сторон<br>Раскланялся, потом на сцену<br>В большом рассеянье взглянул,<br>Отворотился и зевнул,<br>И молвил: «Всех пора на смену;<br>Балеты долго я терпел,<br>Но и Дидло мне надоел»</blockquote>`
+      },
+      opera_freyshits_weber: {
+        tag: "Быт и реалии эпохи",
+        title: "«Фрейшица» музыка",
+        html: `<p>Популярная немецкая мистическая опера Карла Марии Вебера «Вольный стрелок» (в русской традиции ее называли по оригиналу «Der Freischütz»), которая ставилась на сцене Петербургского императорского театра и пользовалась популярностью</p>
+               <div class="comm-audio-block">
+                 <a href="https://vk.ru/audio-2001934569_7934569" target="_blank" rel="noopener noreferrer" class="comm-audio-btn">
+                   <span class="audio-icon">▶</span>
+                   <span class="audio-text">
+                     <strong>К. М. Вебер — Увертюра к опере «Вольный стрелок»</strong>
+                     <small>Слушать аудиозапись во ВКонтакте</small>
+                   </span>
+                 </a>
+               </div>`
+      },
+
+      // Строфа 11
+      fora: {
         tag: "Язык и фразеология XIX века",
-        title: "Fora (фора)",
-        html: `<p>Fora — бис, браво (с итальянского). Публика активно выражает своё восхищение происходящим на сцене, но у главного героя оно не вызывает никакого интереса зато привлекают привлекают сидящие в зале красавицы.</p>`
+        title: "Fora",
+        html: `<p>Fora — бис, браво (с итальянского). Публика активно выражает своё восхищение происходящим на сцене, но у главного героя оно не вызывает никакого интереса — зато привлекает внешность девушки на сцене</p>`
       },
-      person_dyurova: {
+      cross_bonton_french: {
+        tag: "Перекрестная ссылка",
+        title: "Bon ton",
+        html: `<p><!-- ШАБЛОН: перекрестная ссылка на комментарий про бонтон --></p>`
+      },
+      cross_punch_teatr: {
+        tag: "Перекрестная ссылка",
+        title: "Пунш",
+        html: `<p><!-- ШАБЛОН: перекрестная ссылка на пунш --></p>`
+      },
+      person_alexandrina_dyurova: {
         tag: "Быт и реалии эпохи",
         title: "Александрина Дюрова",
-        html: `<p>Александрина Дюрова — звезда балетной и оперной сцены Петербурга 1820-х годов.</p>`
+        html: `<p>Александрина Дюрова — звезда балетной и оперной сцены Петербурга 1820-х годов</p>`
       },
-      geo_summer_garden: {
+      cens_theater_actress_obscenity: {
+        tag: "История цензуры",
+        title: "Цензурный пропуск",
+        html: `<p><!-- ШАБЛОН: комментарий к пропуску в строфе 11 --></p>`
+      },
+      person_antonin_dancer: {
+        tag: "Быт и реалии эпохи",
+        title: "Антонин воздушный",
+        html: `<p>Антонин (Антуан Титюс) — популярный в 1820-е годы французский танцовщик петербургской балетной труппы, отличавшийся лёгким прыжком и виртуозной техникой (отсюда эпитет «воздушный»)</p>`
+      },
+
+      // Строфа 12
+      status_lenta_i_zvezda: {
+        tag: "Быт и реалии эпохи",
+        title: "Лента и звезда",
+        html: `<p>Лента и звезда — главные знаки отличия высших орденов Российской империи.</p>
+               <p>Полежаев показывает, что Сашка в театре оказался в окружении высшей имперской элиты, где обычный студент чувствует себя чужим</p>`
+      },
+      phrase_igrat_foku: {
+        tag: "Язык и фразеология XIX века",
+        title: "Играть Фоку",
+        html: `<p>Выражение «играть Фоку» восходит к народным балаганам, ярмарочным представлениям и скоморошьим играм. Фока — шут, который ведет себя развязно, кривляется и потешает публику</p>`
+      },
+
+      // Строфа 13
+      geo_letniy_sad_spb: {
         tag: "Карта событий",
         title: "Летний сад",
-        html: `<p>Летний сад — старейший, знаменитый живописный парк в самом центре Санкт-Петербурга, основанный Петром I в 1704 году. Изначально сад задумывался как летняя императорская резиденция, затем стал излюбленным местом для прогулок высшего света.</p>`
+        html: `<p>Летний сад — старейший, знаменитый живописный парк в самом центре Санкт-Петербурга, основанный Петром І в 1704 году. Изначально сад задумывался как летняя императорская резиденция, затем стал излюбленным местом для прогулок высшего света</p>`
       },
-      fashion_indian_shawls: {
+      cens_stanza_razzhaditsa: {
+        tag: "История цензуры",
+        title: "Цензурный пропуск",
+        html: `<p><!-- ШАБЛОН: комментарий к пропуску в строфе 13 --></p>`
+      },
+
+      // Строфа 14
+      history_napoleon_generals: {
+        tag: "Быт и реалии эпохи",
+        title: "Моро, Ней и Даву",
+        html: `<p>Перечислены полководцы Наполеоновских войск — культовые фигуры для свободомыслящей молодежи 1820-х годов</p>`
+      },
+
+      // Строфа 15
+      cross_byvalo_intro: {
+        tag: "Перекрестная ссылка",
+        title: "Бывало...",
+        html: `<p><!-- ШАБЛОН: перекрестная ссылка --></p>`
+      },
+      geo_millionnaya_street: {
+        tag: "Карта событий",
+        title: "Миллионная улица",
+        html: `<p>Мильонная — улица в самом центре Санкт-Петербурга, возле Зимнего дворца (ныне ул. Халтурина); упоминается в первой главе пушкинского «Евгения Онегина» (XLVIII строфа): «Да дрожек отдаленный стук/ С Мильонной раздавался вдруг»</p>`
+      },
+      cens_stanza_uncle_scoundrel: {
+        tag: "История цензуры",
+        title: "Цензурный пропуск",
+        html: `<p><!-- ШАБЛОН: комментарий к пропуску в конце строфы 15 --></p>`
+      },
+
+      // Строфа 16
+      vocab_zaburdyga_friend: {
+        tag: "Язык и фразеология XIX века",
+        title: "Забулдыга",
+        html: `<p>Забулдыга — экспрессивное просторечие, означающее «отчаянный гуляка, кутила, беспутный человек». Сочетание с притяжательным местоимением передает не осуждение, а дружескую теплоту, иронию и принятие бунтарской натуры героя</p>`
+      },
+      coins_tselkovy_rubl: {
+        tag: "Быт и реалии эпохи",
+        title: "Целковый рубль",
+        html: `<p>Целковый рубль — крупная серебряная монета достоинством в один рубль. Название происходило от слова «целый»</p>`
+      },
+      cross_frantik_park: {
+        tag: "Перекрестная ссылка",
+        title: "Франтик",
+        html: `<p><!-- ШАБЛОН: перекрестная ссылка на комментарий к франту в главе 2 (vocab_frant_dandy) --></p>`
+      },
+      cens_brothel_women_feast: {
+        tag: "История цензуры",
+        title: "Цензурный пропуск",
+        html: `<p><!-- ШАБЛОН: комментарий к пропуску в строфе 16 --></p>`
+      },
+
+      // Строфа 17
+      drinks_reynveyny_wine: {
+        tag: "Быт и реалии эпохи",
+        title: "Рейнвейны",
+        html: `<p>Рейнвейны — историческое название, закрепившееся за белыми винами, производящимися в Германии в долине реки Рейн</p>`
+      },
+      places_cafe_de_france: {
+        tag: "Быт и реалии эпохи",
+        title: "Café de France",
+        html: `<p>Café de France (с французского: «французское кафе») — собирательный образ модного столичного заведения в западном стиле, где проводила время интеллигенция</p>`
+      },
+      cens_stanza_lileyny_touch: {
+        tag: "История цензуры",
+        title: "Цензурный пропуск",
+        html: `<p><!-- ШАБЛОН: комментарий к пропуску в строфе 17 --></p>`
+      },
+      epithet_lileyny: {
+        tag: "Язык и фразеология XIX века",
+        title: "Лилейны",
+        html: `<p>Лилейны — краткая форма поэтичного прилагательного «лилейный» (белоснежный, нежный, подобный лилии). Распространенный штамп для описания женской красоты (рук, плеч, шеи)</p>`
+      },
+      cross_shlyapa_elastik_cafe: {
+        tag: "Перекрестная ссылка",
+        title: "Шляпа эластик",
+        html: `<p><!-- ШАБЛОН: перекрестная ссылка --></p>`
+      },
+      vocab_a_la_coq_petukh: {
+        tag: "Язык и фразеология XIX века",
+        title: "À la coq",
+        html: `<p>С французского — как петух / петухом</p>`
+      },
+
+      // Строфа 18
+      person_karatygin_actor: {
+        tag: "Быт и реалии эпохи",
+        title: "Каратыгин",
+        html: `<p>Василий Андреевич Каратыгин — великий трагический актер Петербургского императорского театра первой половины ХІХ века, славившийся своим пафосным стилем игры. У склонного к веселью, свободолюбивого главного героя академический театр и игра Каратыгина не вызывают никакого интереса</p>`
+      },
+      tobacco_vakshtaf: {
+        tag: "Быт и реалии эпохи",
+        title: "Вакштаф",
+        html: `<p>Вакштаф — сорт табака</p>`
+      },
+      cens_midnight_carriage_brothel: {
+        tag: "История цензуры",
+        title: "Цензурный пропуск",
+        html: `<p><!-- ШАБЛОН: комментарий к пропуску в строфе 18 --></p>`
+      },
+      transport_dilizhans_coach: {
+        tag: "Быт и реалии эпохи",
+        title: "Дилижанс",
+        html: `<p>Дилижанс — первый регулярный общественный транспорт для междугородних поездок в Российской империи. Представлял собой большую закрытую многоместную карету на лошадях. Первая регулярная линия открылась в 1820 году между Санкт-Петербургом и Москвой — путь между городами на таком транспорте занимал около 4-5 суток</p>
+               <!-- *вставить фотку дилижанса* -->`
+      },
+
+      // Строфа 19
+      geo_kremlevsky_sad_moscow: {
+        tag: "Карта событий",
+        title: "Кремлёвский сад",
+        html: `<p>Кремлевский (Александровский) сад был открыт в начале 1820-х годов вдоль кремлевских стен после того, как река Неглинная была убрана в подземную трубу. Он сразу стал главным центром притяжения для публики, студентов и разночинцев</p>`
+      },
+      cross_franty_garden: {
+        tag: "Перекрестная ссылка",
+        title: "Франты",
+        html: `<p><!-- ШАБЛОН: перекрестная ссылка на комментарий к франту в главе 2 (vocab_frant_dandy) --></p>`
+      },
+
+      // Строфа 20
+      fashion_indiyskie_shali: {
         tag: "Быт и реалии эпохи",
         title: "Индийские шали",
-        html: `<p>В начале XIX века в России кашмирская индийская шаль была главным предметом роскоши в женском гардеробе.</p>`
+        html: `<p>В начале ХІХ века в России кашмирская индийская шаль была одним из главных предметов роскоши в женском гардеробе.</p>`
       },
-      accessory_lornet: {
+      accessory_lornet_glass: {
         tag: "Быт и реалии эпохи",
         title: "Лорнет",
-        html: `<p>Лорнет — это разновидность оптических очков на длинной изящной ручке, предназначенных для рассматривания предметов на расстоянии. В первой трети XIX века лорнет был основным светским аксессуаром дворян, дам и денди.</p>`
+        html: `<p>Лорнет — это разновидность оптических очков на длинной изящной ручке, предназначенных для рассматривания предметов на расстоянии. В первой трети XIX века лорнет был основным светским аксессуаром дворян, модно и изысканно одевающихся людей</p>
+               <!-- *фотка лорнета* -->`
       },
-      mores_marriage: {
+      mores_nadoevshee_zamuzhstvo: {
         tag: "Быт и реалии эпохи",
-        title: "Брак по расчёту и замужество",
-        html: `<p>В дворянской и купеческой среде первой трети XIX века большинство браков заключалось по расчёту или решению родителей. В подобном длительном союзе уже не шло речи о чувствах и женщины могли вступать в другие романтические связи</p>`
+        title: "Надоевшее замужство",
+        html: `<p>В дворянской и купеческой среде первой трети ХІХ века большинство браков заключалось по расчёту или решению родителей. В подобном длительном союзе уже не шло речи о чувствах и женщины могли вступать в другие романтические связи</p>`
       },
-      epithet_lileynaya: {
+
+      // Строфа 21
+      poetics_lileya_symbol: {
         tag: "Язык и фразеология XIX века",
-        title: "Лилейная грудь",
-        html: `<p>Устойчивый эпитет, который обозначает белый, нежный, ослепительно красивый</p>`
+        title: "Лилея",
+        html: `<p>Лилея (устаревшая и поэтическая форма слова лилия) выступала главным символом чистоты, непорочности, хрупкости и ослепительной белизны</p>`
       },
       etiquette_podat_ruchku: {
         tag: "Быт и реалии эпохи",
         title: "Подать ручку",
-        html: `<p>В дворянском этикете XIX века подать руку (ручку) мужчине для поцелуя или при приветствии было жестом особой благосклонности и приглашения к знакомству и дальнейшему сближению. Обыкновенно девушка из строгого дворянского семейства не могла первой подать руку незнакомцу</p>`
+        html: `<p>В дворянском этикете ХІХ века подать руку (ручку) мужчине для поцелуя или при приветствии было жестом особой благосклонности, приглашения к знакомству и дальнейшему сближению. Обыкновенно девушка из строгого дворянского семейства не могла первой подать руку незнакомцу</p>`
       },
-      estate_prikazny: {
+
+      // Строфа 22
+      estate_prikazny_chinovnik: {
         tag: "Быт и реалии эпохи",
         title: "Приказный",
         html: `<p>Приказный — мелкий чиновник, канцелярист или служащий суда/приказа. Смешон своим неловким стремлением подражать дворянскому франтовству («в пух разряженный»).</p>`
       },
-      estate_kupchik: {
+      estate_kupchik_s_trostochkoy: {
         tag: "Быт и реалии эпохи",
         title: "Купчик с тросточкой",
-        html: `<p>Купчик с тросточкой — представитель разбогатевшего купечества. Трость в 1820-е годы была маркером солидности.</p>`
+        html: `<p>Купчик с тросточкой — представитель разбогатевшего купечества. Трость в 1820-е годы была маркером солидности</p>`
       },
-      mores_male_tears: {
+
+      // Строфа 24
+      mores_slyozy_obnimanya: {
         tag: "Быт и реалии эпохи",
-        title: "Сентиментальные объятия друзей",
+        title: "Мужские слезы и объятия",
         html: `<p>Мужские слезы, братские объятия и поцелуи при встрече были абсолютно нормальной частью эмоциональной культуры эпохи. Можно заметить, что у Полежаева эта традиция гиперболизирована: друзья целуются и плачут от избытка чувств и алкоголя, тут же отправляясь обратно в трактир.</p>`
       },
-      vocab_vivat: {
-        tag: "Язык и фразеология XIX века",
+
+      // Строфа 25
+      cens_stanza_boisterous_shout: {
+        tag: "История цензуры",
+        title: "Цензурный пропуск",
+        html: `<p><!-- ШАБЛОН: комментарий к пропуску в строфе 25 --></p>`
+      },
+      cross_punsh_traktir_canto2: {
+        tag: "Перекрестная ссылка",
+        title: "Пунш",
+        html: `<p><!-- ШАБЛОН: перекрестная ссылка на пунш --></p>`
+      },
+
+      // Строфа 26
+      cross_jean_friend_canto2: {
+        tag: "Перекрестная ссылка",
+        title: "Jean",
+        html: `<p><!-- ШАБЛОН: перекрестная ссылка на коммент в этой части --></p>`
+      },
+      cross_gishard_pipe: {
+        tag: "Перекрестная ссылка",
+        title: "Гишард",
+        html: `<p><!-- ШАБЛОН: отсылка к ссылке на гишард в первой главе --></p>`
+      },
+      cens_kavraysky_drunk_room: {
+        tag: "История цензуры",
+        title: "Цензурный пропуск",
+        html: `<p>В неподцензурной версии: «Весь выпачкан, мертвецки пьяным». Какое именно слово могло стоять на месте пропуска — окончательно не ясно</p>`
+      },
+
+      // Строфа 27
+      cross_vivat_canto1: {
+        tag: "Перекрестная ссылка",
         title: "Виват",
-        html: `<p>Виват — от латинского vivat «да здравствует!», используется как торжественное приветствие, возглас одобрения или пожелание успеха</p>`
+        html: `<p><!-- ШАБЛОН: перекрестная на виват в первой главе --></p>`
+      },
+      vocab_pozhivka_dobycha: {
+        tag: "Язык и фразеология XIX века",
+        title: "Поживка",
+        html: `<p>Поживка — разговорное выражение; то, чем можно поживиться, добыча, легкое приобретение</p>`
+      },
+      cross_punsh_ending: {
+        tag: "Перекрестная ссылка",
+        title: "Пунш",
+        html: `<p><!-- ШАБЛОН: перекрестный коммент на пунш --></p>`
+      },
+      cross_kremlevsky_sad_canto2: {
+        tag: "Перекрестная ссылка",
+        title: "Кремлевский сад",
+        html: `<p><!-- ШАБЛОН: перекрестная на кремлевский сад во второй главе (geo_kremlevsky_sad_moscow) --></p>`
+      },
+
+      // Эпилог
+      poetics_korifey_pokhabstva: {
+        tag: "Язык и фразеология XIX века",
+        title: "Корифей",
+        html: `<p>Корифей — человек, являющийся выдающимся деятелем в какой-либо сфере. Речь идёт о том, что автор крайне подробно и выразительно описал все неоднозначные и яркие приключения главного героя</p>`
+      },
+      estate_seminarist_moralist: {
+        tag: "Быт и реалии эпохи",
+        title: "Семинарист",
+        html: `<p>Семинаристы (учащиеся духовных семинарий и академий) составляли отдельную сословную группу и обладали репутацией людей со строгой церковной моралью. В глазах светского поэта семинарист это скучный и занудный человек, готовый громить любую светскую лирику за «греховность» и «неприличие»</p>`
       }
     };
 
@@ -1562,7 +2303,7 @@
       const data = DB[id];
       if (!data) return;
 
-      document.querySelectorAll('.term, .teen-censored').forEach(el => el.classList.remove('active'));
+      document.querySelectorAll('.term, .teen-censored, .text-variant').forEach(el => el.classList.remove('active'));
       if (window.event && window.event.target) {
         window.event.target.classList.add('active');
       }
