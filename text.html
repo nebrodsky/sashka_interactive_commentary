@@ -70,22 +70,24 @@
     }
 
     /* Выделение разночтений и вариантов текста (пунктир без привязки к 18+) */
-.text-variant {
-  color: inherit;
-  border-bottom: 1px dashed var(--accent);
-  cursor: pointer;
-  font-style: normal;
-  transition: opacity 0.15s ease, background-color 0.15s ease;
-  -webkit-box-decoration-break: clone;
-  box-decoration-break: clone;
-}
+.teen-censored {
+      color: inherit;
+      border-bottom: 1px dashed var(--accent);
+      cursor: pointer;
+      font-style: normal;
+      transition: opacity 0.15s ease, background-color 0.15s ease;
+      -webkit-box-decoration-break: clone;
+      box-decoration-break: clone;
+    }
 
 /* Эффект при наведении и при активном комментарии */
 .text-variant:hover,
-.text-variant.active {
-  background-color: var(--accent-light);
-  border-bottom-style: solid;
-}
+    .text-variant.active,
+    .teen-censored:hover,
+    .teen-censored.active {
+      background-color: var(--accent-light);
+      border-bottom-style: solid;
+    }
   </style>
 </head>
 <body class="mode-teen">
